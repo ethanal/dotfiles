@@ -1,4 +1,5 @@
-export CLICOLOR=1
+export CLICOLOR=true
+export DISABLE_AUTO_TITLE=true
 export HISTFILESIZE=200000
 export HISTSIZE=10000
 setopt APPEND_HISTORY # adds history

@@ -1,4 +1,48 @@
 {
+  "ion": {
+    "dev": {
+      "commands": ["cd ~/intranet3", "workon el-ion", "clear", "ls"]
+    },
+    "git": {
+      "commands": ["cd ~/intranet3", "workon el-ion", "clear", "ssh-agent sh", "ssh-add ~/.ssh/id_rsa"]
+    },
+    "logs": {
+      "split": "vertical",
+      "panes": [
+        {
+          "size": 40,
+          "commands": ["tail -f /var/log/ion/gunicrn.log"]
+        },
+        {
+          "size": 60,
+          "split": "horizontal",
+          "panes": [
+            {
+              "size": 50,
+              "commands": ["tail -f /var/log/ion/ion.tjhsst.edu.access.log"]
+            },
+            {
+              "size": 50,
+              "commands": ["tail -f /var/log/ion/ion.tjhsst.edu.error.log"]
+            }
+          ]
+        }
+      ]
+    },
+    "server": {
+      "commands": ["cd ~/intranet3", "workon el-ion", "clear", "fab runserver:8080,yes"]
+    },
+    "shell": {
+      "commands": ["cd ~/intranet3", "workon el-ion", "clear", "./manage.py shell_plus"]
+    }
+  },
+
+  "iodine": {
+    "dev": {
+      "commands": ["cd ~/intranet2", "ls"]
+    }
+  },
+
   "test": {
     "test window": {
       "split": "horizontal",
