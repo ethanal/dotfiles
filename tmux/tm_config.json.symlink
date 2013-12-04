@@ -11,7 +11,7 @@
       "panes": [
         {
           "size": 40,
-          "commands": ["tail -f /var/log/ion/gunicrn.log"]
+          "commands": ["tail -f /var/log/ion/gunicorn.log"]
         },
         {
           "size": 60,
