@@ -6,7 +6,6 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="ethan"
-#"robbyrussell"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -68,3 +67,15 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+typeset -U config_files
+config_files=($HOME/.dotfiles/**/*.zsh)
+
+for file in ${config_files:#*/install.zsh}
+do
+    echo Running $file
+done
+
+
+
+
+unset config_files
