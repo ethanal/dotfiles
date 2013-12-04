@@ -1,0 +1,4 @@
+export CLICOLOR=1
+export HISTFILESIZE=200000
+export HISTSIZE=10000
+export HISTCONTROL=ignoredups
