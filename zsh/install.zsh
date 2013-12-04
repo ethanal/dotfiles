@@ -1,3 +1,4 @@
 #!/bin/zsh
 
-cp ethan.zsh-theme ~/.oh-my-zsh/themes/ethan.zsh-theme
+mkdir -p ~/.oh-my-zsh/custom/themes
+cp ethan.zsh-theme ~/.oh-my-zsh/custom/themes/ethan.zsh-theme
