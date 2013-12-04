@@ -72,10 +72,7 @@ config_files=($HOME/.dotfiles/**/*.zsh)
 
 for file in ${config_files:#*/install.zsh}
 do
-    echo Running $file
+    source $file
 done
-
-
-
 
 unset config_files
