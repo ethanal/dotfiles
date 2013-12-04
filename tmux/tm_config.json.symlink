@@ -42,7 +42,30 @@
       "commands": ["cd ~/intranet2", "ls"]
     }
   },
-
+  "irssi": {
+    "irssi": {
+      "commands": ["irssi"]
+    }
+  },
+  "stream": {
+    "stream": {
+      "split": "vertical",
+      "panes": [
+        {
+          "size": 33,
+          "commands": ["jackdmp -d coreaudio"]
+        },
+        {
+          "size": 33,
+          "commands": ["icecast -c ~/.icecast.xml"]
+        },
+        {
+          "size": 34,
+          "commands": ["darkice -c ~/.darkice.cfg"]
+        }
+      ]
+    }
+  },
   "test": {
     "test window": {
       "split": "horizontal",
