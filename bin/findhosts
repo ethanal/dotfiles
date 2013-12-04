@@ -1,0 +1,10 @@
+#!/bin/sh
+
+for ip in $(seq 1 254); do
+    name=`nslookup 192.168.1.$ip | grep "name"`
+    printf "\r"
+    [ -n "$name" ] && echo 192.168.1.$ip "->" `echo $name|cut -d" " -f4|sed 's/.$//'`&&last=1 || printf "192.168.1.$ip -> ..."&&last=0
+done
+
+[ $last==0 ] && printf "\r" || printf "\n";
+

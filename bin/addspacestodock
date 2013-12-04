@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ "$#" -eq 1 ] || return 1
+for((i=0;i<$1;i++)); do
+    defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+done
+killall Dock
