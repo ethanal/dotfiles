@@ -11,3 +11,8 @@ then
 
     source /usr/local/bin/virtualenvwrapper.sh 
 fi
+
+if [ "$(hostname)" = "ion" ]
+then
+    source /usr/local/bin/ion_development_env_setup.sh
+fi
