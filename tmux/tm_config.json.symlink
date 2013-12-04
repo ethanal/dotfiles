@@ -1,0 +1,37 @@
+{
+  "test": {
+    "test window": {
+      "split": "horizontal",
+      "panes": [
+        {
+          "size": 20,
+          "commands": ["echo 1"]
+        },
+        {
+          "size": 20,
+          "commands": ["echo 2"]
+        },
+        {
+          "size": 20,
+          "split": "vertical",
+          "panes": [
+            {
+              "size": 50
+            },
+            {
+              "size": 50
+            }
+          ]
+        },
+        {
+          "size": 20,
+          "commands": ["echo 4"]
+        },
+        {
+          "size": 20,
+          "commands": ["echo 5"]
+        }
+      ]
+    }
+  }
+}
