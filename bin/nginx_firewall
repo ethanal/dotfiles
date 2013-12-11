@@ -1,7 +1,0 @@
-#!/bin/sh
-
-launchctl unload /System/Library/LaunchAgents/com.apple.alf.useragent.plist
-launchctl unload /System/Library/LaunchDaemons/com.apple.alf.agent.plist
-defaults write /Library/Preferences/com.apple.alf.plist firewall -dict-add "nginx" '{"proc" = "nginx"; "state" = 0; }'
-launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
-launchctl load /System/Library/LaunchAgents/com.apple.alf.useragent.plist
