@@ -11,7 +11,7 @@ spaces() {
     fi
 }
 
-prefix=`ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\  -f2 | cut -d. -f1-3`
+prefix=`ifconfig | grep 'inet ' | grep -v 127.0.0.1 | sed -e 's/^ *//g' -e 's/ *$//g' | cut -d\  -f2 | cut -d. -f1-3`
 
 echo -e "\033[4mIP Address    | Hostname         \033[0m"
 
