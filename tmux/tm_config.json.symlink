@@ -4,7 +4,7 @@
       "commands": ["cd ~/intranet3", "workon el-ion", "clear", "ls"]
     },
     "git": {
-      "commands": ["cd ~/intranet3", "workon el-ion", "clear", "ssh-agent zsh", "ssh-add ~/.ssh/id_rsa"]
+      "commands": ["cd ~/intranet3", "workon el-ion", "clear", "ssh -T git@bitbucket.org"]
     },
     "logs": {
       "split": "vertical",
