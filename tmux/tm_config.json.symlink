@@ -30,7 +30,7 @@
       ]
     },
     "server": {
-      "commands": ["cd ~/intranet3", "workon el-ion", "clear", "fab runserver:port=8080,debug_toolbar=yes,dummy_cache=no,short_cache=no"]
+      "commands": ["cd ~/intranet3", "workon el-ion", "clear", "fab runserver:port=8080,,warn_invalid_template_vars=no,debug_toolbar=yes,dummy_cache=no,short_cache=no"]
     },
     "shell": {
       "commands": ["cd ~/intranet3", "workon el-ion", "clear", "./manage.py shell_plus"]
