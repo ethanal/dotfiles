@@ -1,3 +1,4 @@
 #!/bin/bash
 
-touch ~/Desktop/"$*"
+echo `date +"%a %b %d %y"`: $* >> todo.txt
+cat todo.txt
