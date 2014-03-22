@@ -6,4 +6,4 @@ set shiftwidth=4
 set expandtab
 set paste
 set ignorecase
-
+cmap w!! %!sudo tee > /dev/null %
