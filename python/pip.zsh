@@ -1,4 +1,4 @@
-if [ $(uname -s) = "Darwin" ] || [[ $(hostname) =~ .*eal.* ]]
+if [ $(uname -s) = "Darwin" ] 
 then
     # virtualenv should use Distribute instead of legacy setuptools
     export VIRTUALENV_DISTRIBUTE=false
@@ -12,6 +12,15 @@ then
 
     source /usr/local/bin/virtualenvwrapper.sh 
 fi
+
+if [[ $(hostname) =~ .*eal.* ]]
+then
+    export VIRTUALENV_DISTRIBUTE=false
+    export PIP_VIRTUALENV_BASE=$HOME/.virtualenvs
+    export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 
 if [ "$(hostname)" = "ion" ]
 then
