@@ -1,4 +1,4 @@
-if [ "$(uname -s)" = "Darwin" ]
+if [ $(uname -s) = "Darwin" ] || [[ $(hostname) =~ .*ethan.* ]]
 then
     # virtualenv should use Distribute instead of legacy setuptools
     export VIRTUALENV_DISTRIBUTE=false
