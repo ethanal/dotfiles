@@ -11,9 +11,7 @@ then
     export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
     source /usr/local/bin/virtualenvwrapper.sh 
-fi
-
-if [[ $(hostname) =~ .*eal.* ]]
+elif [[ $(hostname) =~ .*ethan.* ]]
 then
     export VIRTUALENV_DISTRIBUTE=false
     export PIP_VIRTUALENV_BASE=$HOME/.virtualenvs
