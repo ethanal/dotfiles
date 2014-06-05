@@ -1,4 +1,4 @@
 dotfiles
 =========
 
-Dotfiles and and useful scripts for zsh. Based on [Zach Holman's](https://github.com/holman/dotfiles) dotfile bootstrap script.
+Dotfiles and and useful scripts for zsh. Uses Zach Holman's [bootstrap script](https://github.com/holman/dotfiles/blob/master/script/bootstrap).

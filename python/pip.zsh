@@ -1,4 +1,4 @@
-if [ "$(uname -s)" = "Darwin" ]
+if [ $(uname -s) = "Darwin" ] 
 then
     # virtualenv should use Distribute instead of legacy setuptools
     export VIRTUALENV_DISTRIBUTE=false
@@ -11,7 +11,14 @@ then
     export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
     source /usr/local/bin/virtualenvwrapper.sh 
+elif [[ $(hostname) =~ .*ethan.* ]]
+then
+    export VIRTUALENV_DISTRIBUTE=false
+    export PIP_VIRTUALENV_BASE=$HOME/.virtualenvs
+    export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
+
 
 if [ "$(hostname)" = "ion" ]
 then
