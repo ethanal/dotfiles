@@ -44,7 +44,7 @@
   },
   "irssi": {
     "irssi": {
-      "commands": ["irssi"]
+      "commands": ["irssi --connect=irc.freenode.net --nick ethanal"]
     }
   },
   "stream": {
