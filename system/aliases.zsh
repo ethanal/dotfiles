@@ -1,1 +1,1 @@
-alias sg="gist -pc"
+alias pg="gist -pc"
