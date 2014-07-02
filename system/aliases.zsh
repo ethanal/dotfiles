@@ -1,0 +1,1 @@
+alias sg="gist -pc"
