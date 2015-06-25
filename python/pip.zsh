@@ -6,8 +6,6 @@ then
     export PIP_VIRTUALENV_BASE=$HOME/.virtualenvs
     # pip should only run if there is a virtualenv currently activated
     # export PIP_REQUIRE_VIRTUALENV=true
-    # cache pip-installed packages to avoid re-downloading
-    export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
     export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
     source /usr/local/bin/virtualenvwrapper.sh 
@@ -15,7 +13,6 @@ elif [[ $(hostname) =~ .*ethan.* ]]
 then
     export VIRTUALENV_DISTRIBUTE=false
     export PIP_VIRTUALENV_BASE=$HOME/.virtualenvs
-    export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
