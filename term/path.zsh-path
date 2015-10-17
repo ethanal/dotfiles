@@ -1,1 +1,1 @@
-export PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$(npm bin):/usr/local/heroku/bin:/usr/local/mysql/bin:$HOME/.dotfiles/bin:$PATH
+export PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:"$(npm bin)":/usr/local/heroku/bin:/usr/local/mysql/bin:$HOME/.dotfiles/bin:$PATH
