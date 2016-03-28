@@ -37,21 +37,21 @@ ZSH_THEME="ethan"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx fabric jsontools npm pip supervisor terminalapp)
+plugins=(git osx fabric jsontools npm pip supervisor terminalapp aws)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-#export PATH="/usr/local/heroku/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin:/usr/local/CrossPack-AVR/bin:/opt/sm/bin:/opt/sm/pkg/active/bin:/opt/sm/pkg/active/sbin:/Users/Ethan/.rvm/bin:/Users/Ethan/.rvm/bin"
+#export PATH=""
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -70,15 +70,23 @@ source $ZSH/oh-my-zsh.sh
 typeset -U config_files
 config_files=($HOME/.dotfiles/**/*.zsh)
 
-
+source $HOME/.dotfiles/term/path.zsh-path
 
 for file in ${(M)config_files:#*/env.zsh} ${(M)config_files:#*/config.zsh}
 do
+    # echo $file
     source $file
 done
 
-for file in ${${${config_files:#*/install.zsh}:#*/env.zsh}:#*/config.zsh}
+for file in ${${${${config_files:#*/install.zsh}:#*/env.zsh}:#*/config.zsh}:#*/final_setup.zsh}
 do
+    # echo $file
+    source $file
+done
+
+for file in ${(M)config_files:#*/final_setup.zsh}
+do
+    # echo $file
     source $file
 done
 
