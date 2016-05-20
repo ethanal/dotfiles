@@ -6,3 +6,5 @@ bind C-a send-prefix
 # quick pane cycling
 unbind Tab
 bind Tab select-pane -t :.+
+
+setw -g mouse on

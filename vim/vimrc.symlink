@@ -1,9 +1,25 @@
 syntax on
+set backspace=indent,eol,start
+
 set autoindent
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set paste
+
 set ignorecase
-cmap w!! %!sudo tee > /dev/null %
+set ruler
+set number
+set relativenumber
+set clipboard=unnamed
+set wildmenu
+set shell=/bin/bash
+
+autocmd FileType make setlocal noexpandtab
+autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 
+filetype plugin indent on
+
+nnoremap <F8> :make<CR>
+noremap <F7> gT
+noremap <F9> gt
