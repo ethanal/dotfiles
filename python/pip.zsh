@@ -12,7 +12,10 @@ then
 elif [[ $(hostname) =~ .*ethan.* ]]
 then
     export VIRTUALENV_DISTRIBUTE=false
-    export PIP_VIRTUALENV_BASE=$HOME/.virtualenvs
+    export PIP_VIRTUALENV_BASE=/usr/local/virtualenvs
+    export PIP_DOWNLOAD_CACHE=/usr/local/virtualenvs/cache
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+    export WORKON_HOME=/usr/local/virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
