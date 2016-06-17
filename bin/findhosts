@@ -11,12 +11,12 @@ spaces() {
     fi
 }
 
-prefix=`ifconfig | grep 'inet ' | grep -v 127.0.0.1 | sed -e 's/^ *//g' -e 's/ *$//g' | cut -d\  -f2 | cut -d. -f1-3`
+prefix=`ifconfig en0 | grep 'inet ' | grep -v 127.0.0.1 | sed -e 's/^ *//g' -e 's/ *$//g' | cut -d\  -f2 | cut -d. -f1-3`
 
 echo -e "\033[4mIP Address    | Hostname         \033[0m"
 
 for ip in $(seq 1 254); do
-    name=`nslookup $prefix.$ip | grep "name"`
+    name=`nslookup $prefix.$ip $prefix.1 | grep "name"`
     printf "\r"
     
     if [ -n "$name" ]; then
