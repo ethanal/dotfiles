@@ -1,0 +1,57 @@
+call pathogen#infect()
+
+syntax on
+set backspace=indent,eol,start
+
+set autoindent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set ignorecase
+set ruler
+set number
+set relativenumber
+set clipboard=unnamed
+set wildmenu
+set shell=/bin/bash
+
+autocmd FileType make setlocal noexpandtab
+autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 
+filetype plugin indent on
+
+" Cycle through tabs with <<, >> keys
+" noremap <F7> gT
+" noremap <F9> gt
+
+
+" Paste on new lines
+" nmap p :pu<CR>
+
+" vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_command = "goimports"
+
+" nerdtree
+" Toggle NERD Tree with ctrl-N
+map <C-n> :NERDTreeToggle<CR>
+" Close vim if the last window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" vim-airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
+" vim-colors-solarized
+set background=dark
+colorscheme solarized
+
