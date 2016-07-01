@@ -8,6 +8,7 @@ set shiftwidth=4
 set expandtab
 
 set ignorecase
+set smartcase  " Don't ignore case in searches when pattern contains upper case chars
 set ruler
 set number
 set relativenumber
@@ -15,26 +16,38 @@ set clipboard=unnamed
 set wildmenu
 set shell=/bin/bash
 
-autocmd FileType make setlocal noexpandtab
-autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 expandtab
-autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
-filetype plugin indent on
+" Speed stuff up
+set ttyfast
+set lazyredraw
 
-set showcmd
-let mapleader=" "
+" Speed up syntax highlighting
+set re=1
+set nocursorcolumn
+set nocursorline
 
-" Cycle through tabs with <<, >> keys
-" noremap <F7> gT
-" noremap <F9> gt
+" Time out on key codes but not mappings.
+" Basically this makes terminal Vim work sanely.
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+
+" Better Completion
+set complete=.,w,b,u,t
+set completeopt=longest,menuone
 
 " More natural splits
 set splitbelow
 set splitright
 
 " This allows buffers to be hidden if you've modified a buffer.
-" This is almost a must if you wish to use buffers in this way.
 set hidden
 
+autocmd FileType make setlocal noexpandtab
+autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+filetype plugin indent on
+
+let mapleader=" "
 " To open a new empty buffer
 nmap <leader>t :enew<cr>
 
@@ -45,5 +58,8 @@ nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
 
 " Close the current buffer
-nmap <leader>w :bd<CR>
+nmap <leader>w :bp <BAR> bd #<CR>
+
+" Do not show stupid q: window
+map q: :q
 

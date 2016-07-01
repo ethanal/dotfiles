@@ -1,11 +1,11 @@
 let g:pathogen_disabled = []
 call pathogen#infect()
 
-source config/core.vim
+runtime config/core.vim
 
 function LoadConfig(name)
     if (index(g:pathogen_disabled, a:name) < 0)
-        execute "source config/" . a:name . ".vim"
+        execute "runtime config/" . a:name . ".vim"
     endif
 endfunction
 
@@ -13,3 +13,4 @@ call LoadConfig("vim-colors-solarized")
 call LoadConfig("vim-airline")
 call LoadConfig("nerdtree")
 call LoadConfig("vim-go")
+call LoadConfig("vim-better-whitespace")
