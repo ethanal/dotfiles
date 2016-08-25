@@ -27,4 +27,4 @@
 	url = https://github.com/christoomey/vim-tmux-navigator.git
 [submodule "vim/vim.symlink/bundle/vim-better-whitespace"]
 	path = vim/vim.symlink/bundle/vim-better-whitespace
-	url = git://github.com/ntpeters/vim-better-whitespace.git
+	url = https://github.com/ntpeters/vim-better-whitespace.git
