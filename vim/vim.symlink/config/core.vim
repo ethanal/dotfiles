@@ -3,8 +3,8 @@ set backspace=indent,eol,start
 
 set autoindent
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 set ignorecase
@@ -43,8 +43,6 @@ set splitright
 set hidden
 
 autocmd FileType make setlocal noexpandtab
-autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 expandtab
-autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
 filetype plugin indent on
 
 let mapleader=" "
@@ -63,3 +61,8 @@ nmap <leader>w :bp <BAR> bd #<CR>
 " Do not show stupid q: window
 map q: :q
 
+" Make
+nmap <leader>m :make<CR>
+
+" Spell check
+autocmd FileType gitcommit setlocal spell
