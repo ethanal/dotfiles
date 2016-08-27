@@ -67,3 +67,6 @@ nmap <leader>m :make<CR>
 
 " Spell check
 autocmd FileType gitcommit setlocal spell
+
+" Spell check config
+set spellcapcheck=
