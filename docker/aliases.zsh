@@ -1,1 +1,1 @@
-alias dockerrmdangling="docker images -a --filter 'dangling=true' -q --no-trunc | xargs docker rmi"
+alias dockerrmdangling="docker images --filter 'dangling=true' -q | xargs docker rmi"
