@@ -34,3 +34,6 @@
 [submodule "vim/vim.symlink/bundle/vim-pandoc"]
 	path = vim/vim.symlink/bundle/vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
+[submodule "vim/vim.symlink/bundle/emmet-vim"]
+	path = vim/vim.symlink/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git

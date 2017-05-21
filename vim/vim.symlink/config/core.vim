@@ -32,13 +32,18 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
-" Better Completion
+" Better completion
 set complete=.,w,b,u,t
 set completeopt=longest,menuone
 
 " More natural splits
 set splitbelow
 set splitright
+
+" Don't clutter workspace
+set nobackup
+set swapfile
+set dir=~/.tmp
 
 " This allows buffers to be hidden if you've modified a buffer.
 set hidden
@@ -75,3 +80,14 @@ set spellcapcheck=
 " Highlight characters in lines > 80 chars.
 autocmd BufWinEnter,WinEnter *.c,*.cc,*.cpp,*.h,*.py let w:m1=matchadd('ErrorMsg', '\%>80v.\+', -1)
 autocmd BufWinLeave,WinLeave * call clearmatches()
+
+" Syntax highlighting file patterns
+autocmd BufRead,BufNewFile Dockerfile* setfiletype dockerfile
+autocmd BufRead,BufNewFile *.proto* setfiletype proto
+
+" Code folding
+setlocal foldmethod=syntax
+set foldlevelstart=99999
+
+" Enable mouse
+set mouse=a
