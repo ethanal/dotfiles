@@ -86,8 +86,9 @@ autocmd BufRead,BufNewFile Dockerfile* setfiletype dockerfile
 autocmd BufRead,BufNewFile *.proto* setfiletype proto
 
 " Code folding
-setlocal foldmethod=syntax
+setlocal foldmethod=indent
 set foldlevelstart=99999
+set nofoldenable
 
 " Enable mouse
 set mouse=a
