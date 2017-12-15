@@ -12,6 +12,7 @@ endfunction
 call LoadConfig("vim-colors-solarized")
 call LoadConfig("vim-airline")
 call LoadConfig("nerdtree")
+call LoadConfig("vim-buffergator")
 call LoadConfig("vim-go")
 call LoadConfig("vim-better-whitespace")
 call LoadConfig("vim-pandoc-syntax")

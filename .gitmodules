@@ -37,3 +37,6 @@
 [submodule "vim/vim.symlink/bundle/emmet-vim"]
 	path = vim/vim.symlink/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "vim/vim.symlink/bundle/vim-buffergator"]
+	path = vim/vim.symlink/bundle/vim-buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
