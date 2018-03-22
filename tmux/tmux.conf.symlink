@@ -18,4 +18,4 @@ bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq v
 setw -g mouse on
 
 # Fix clipboard
-set-option -g default-command "type 'reattach-to-user-namespace' &> /dev/null && reattach-to-user-namespace -l $SHELL || $SHELL"
+set-option -g default-command "type reattach-to-user-namespace &> /dev/null && reattach-to-user-namespace -l $SHELL || $SHELL"
