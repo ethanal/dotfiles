@@ -1,3 +1,0 @@
-function quick-look() {
-  (( $# > 0 )) && qlmanage -p $* &>/dev/null &
-}

@@ -1,0 +1,49 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+ZSH_THEME="ethan"
+#
+# Uncomment this to disable bi-weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+HIST_STAMPS="mm/dd/yyyy"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+plugins=(git terminalapp aws docker brew history)
+
+source $ZSH/oh-my-zsh.sh
+
+# ZSH config
+export CLICOLOR=true
+export DISABLE_AUTO_TITLE=true
+export HISTFILESIZE=200000
+export HISTSIZE=10000
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt interactivecomments
+
+export EDITOR=/usr/bin/vim
+export PYTHONSTARTUP="$HOME/.pythonrc"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# PATH
+export PATH=/usr/local/heroku/bin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.dotfiles/bin:$PATH
+
+source $HOME/.dotfiles/funcs.zsh
+source $HOME/.dotfiles/local.zsh
+

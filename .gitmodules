@@ -10,9 +10,6 @@
 [submodule "vim/vim.symlink/bundle/vim-airline"]
 	path = vim/vim.symlink/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "term/Menlo-for-Powerline"]
-	path = term/Menlo-for-Powerline
-	url = https://github.com/abertsch/Menlo-for-Powerline.git
 [submodule "vim/vim.symlink/bundle/vim-airline-themes"]
 	path = vim/vim.symlink/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
@@ -40,3 +37,9 @@
 [submodule "vim/vim.symlink/bundle/vim-buffergator"]
 	path = vim/vim.symlink/bundle/vim-buffergator
 	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "vim/vim.symlink/bundle/vim-fugitive"]
+	path = vim/vim.symlink/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/vim.symlink/bundle/ctrlp.vim"]
+	path = vim/vim.symlink/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git

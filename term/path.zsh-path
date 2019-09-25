@@ -1,3 +1,0 @@
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/heroku/bin:$HOME/.dotfiles/bin:/Library/TeX/Distributions/Programs/texbin:$PATH
-
-source /opt/google-cloud/google-cloud-sdk/path.zsh.inc
