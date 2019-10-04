@@ -10,6 +10,7 @@ function LoadConfig(name)
 endfunction
 
 call LoadConfig("vim-colors-solarized")
+call LoadConfig("auto-pairs")
 call LoadConfig("vim-airline")
 call LoadConfig("nerdtree")
 call LoadConfig("vim-buffergator")
