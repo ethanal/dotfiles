@@ -42,6 +42,7 @@ export PATH=/usr/local/heroku/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 export PATH=$HOME/.dotfiles/bin:$PATH
 
 source $HOME/.dotfiles/funcs.zsh
