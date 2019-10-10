@@ -35,6 +35,7 @@ setopt interactivecomments
 export LDFLAGS="-L/usr/local/opt/ncurses/lib"
 export CPPFLAGS="-I/usr/local/opt/ncurses/include"
 
+export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 export EDITOR=/usr/bin/vim
 export PYTHONSTARTUP="$HOME/.pythonrc"
 export LC_ALL=en_US.UTF-8
