@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+mkdir -p $HOME/.tmp
+touch local.zsh
 mkdir -p ~/.oh-my-zsh/custom/themes
 ln -sf $PWD/ethan.zsh-theme $HOME/.oh-my-zsh/custom/themes/ethan.zsh-theme
 

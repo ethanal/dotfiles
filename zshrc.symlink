@@ -17,7 +17,7 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git terminalapp aws docker brew history encode64)
+plugins=(git aws docker brew history encode64)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,6 +48,8 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 export PATH=$HOME/.dotfiles/bin:$PATH
+
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 source $HOME/.dotfiles/funcs.zsh
 source $HOME/.dotfiles/local.zsh
