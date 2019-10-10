@@ -32,12 +32,16 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt interactivecomments
 
+export LDFLAGS="-L/usr/local/opt/ncurses/lib"
+export CPPFLAGS="-I/usr/local/opt/ncurses/include"
+
 export EDITOR=/usr/bin/vim
 export PYTHONSTARTUP="$HOME/.pythonrc"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # PATH
+export PATH=/usr/local/opt/ncurses/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
