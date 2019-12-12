@@ -1,6 +1,6 @@
 gitclose() {
   BRANCH=$(git rev-parse --abbrev-ref HEAD)
-  git checkout master && git pull && git branch -d $BRANCH
+  (git checkout master || git checkout prod) && git pull && git branch -d $BRANCH
 }
 
 alias gitprune="git remote prune origin"
@@ -18,7 +18,8 @@ alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo 'Public key copied to pasteb
 # work correctly with aliases.
 alias sudo='sudo '
 
-alias gack='ack --ignore-dir=vendor --ignore-dir=testdata'
+alias gack='ack --ignore-dir=vendor --ignore-dir=testdata --ignore-dir=mocks'
+alias gt='go test ./...'
 
 # OSX only.
 if [ $(uname -s) = "Darwin" ]

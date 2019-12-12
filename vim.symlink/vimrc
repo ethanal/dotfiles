@@ -20,3 +20,5 @@ call LoadConfig("vim-pandoc-syntax")
 call LoadConfig("vim-pandoc")
 call LoadConfig("emmet-vim")
 call LoadConfig("ctrlp")
+
+runtime config/after.vim
