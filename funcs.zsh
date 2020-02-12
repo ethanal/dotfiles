@@ -1,8 +1,3 @@
-gitclose() {
-  BRANCH=$(git rev-parse --abbrev-ref HEAD)
-  (git checkout master || git checkout prod) && git pull && git branch -d $BRANCH
-}
-
 alias gitprune="git remote prune origin"
 
 alias dockerrmdangling="docker images --filter 'dangling=true' -q | xargs docker rmi"
