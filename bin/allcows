@@ -1,3 +1,0 @@
-#!/bin/bash
-
-cowsay -l | grep -v "Cow files" | tr " \\n" "\n" | while read f; do cowsay -f $f $f; done| less
