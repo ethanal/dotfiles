@@ -16,6 +16,10 @@ alias sudo='sudo '
 alias gack='ack --ignore-dir=vendor --ignore-dir=testdata --ignore-dir=mocks'
 alias gt='go test ./...'
 
+who-listen() {
+  lsof -t -i :$1
+}
+
 # OSX only.
 if [ $(uname -s) = "Darwin" ]
 then
@@ -27,3 +31,4 @@ then
   # This makes open work in tmux.
   alias open="reattach-to-user-namespace open"
 fi
+
