@@ -41,6 +41,8 @@ export PYTHONSTARTUP="$HOME/.pythonrc"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+export AWS_PAGER=""
+
 # PATH
 export PATH=/usr/local/opt/ncurses/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
@@ -57,8 +59,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 source $HOME/.dotfiles/funcs.zsh
 source $HOME/.dotfiles/local.zsh
 
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/nomad nomad
-
 complete -o nospace -C /usr/local/bin/terraform terraform
