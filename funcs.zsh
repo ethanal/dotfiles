@@ -3,7 +3,7 @@ alias gitprune="git remote prune origin"
 alias dockerrmdangling="docker images --filter 'dangling=true' -q | xargs docker rmi"
 
 alias pg="gist -pc"
-alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo 'Public key copied to pasteboard.'"
+alias pubkey="cat ~/.ssh/id_ed25519.pub | pbcopy | echo 'Public key copied to pasteboard.'"
 
 # alias keybase="GPG_TTY=$(tty) keybase"
 #alias gpg="gpg2"
