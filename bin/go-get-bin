@@ -24,12 +24,11 @@ fi
 
 go get "$@"
 
+sudo rm -rf "$GOPATH/pkg" "$GOPATH/src"
 
 if [ "$_ostype" = Darwin ]; then
-  sudo rm -rf "$GOPATH/pkg" "$GOPATH/src"
   brew unlink "go-get-$NAME" 2> /dev/null || true
   brew link "go-get-$NAME"
 else
-  rm -rf "$GOPATH/pkg" "$GOPATH/src"
   ln -is $GOPATH/bin/* /usr/local/bin/
 fi
