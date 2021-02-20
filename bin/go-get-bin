@@ -30,5 +30,5 @@ if [ "$_ostype" = Darwin ]; then
   brew unlink "go-get-$NAME" 2> /dev/null || true
   brew link "go-get-$NAME"
 else
-  ln -is $GOPATH/bin/* /usr/local/bin/
+  sudo ln -is $GOPATH/bin/* /usr/local/bin/
 fi
