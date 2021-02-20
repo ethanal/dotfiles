@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Based on https://blog.filippo.io/cleaning-up-my-gopath-with-homebrew/
+
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+    echo "Usage: go-get-bin github.com/abc/def ..."
+    exit 1
+fi
+
+NAME=$(basename "$1")
+VERSION=$(date '+%Y-%m-%d')
+
+unset GOBIN
+
+_ostype="$(uname -s)"
+if [ "$_ostype" = Darwin ]; then
+  export GOPATH="$(brew --prefix)/Cellar/go-get-$NAME/$VERSION"
+else
+  mkdir -p /usr/local/go-get-bin
+  export GOPATH="/usr/local/go-get-bin/$NAME/$VERSION"
+fi
+
+go get "$@"
+
+if [ "$_ostype" = Darwin ]; then
+  sudo rm -rf "$GOPATH/pkg" "$GOPATH/src"
+  brew unlink "go-get-$NAME" 2> /dev/null || true
+  brew link "go-get-$NAME"
+else
+  rm -rf "$GOPATH/pkg" "$GOPATH/src"
+  ln -is $GOPATH/bin/* /usr/local/bin/
+fi

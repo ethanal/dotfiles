@@ -17,7 +17,7 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git aws docker brew history encode64)
+plugins=(git docker aws brew history)
 
 source $ZSH/oh-my-zsh.sh
 
