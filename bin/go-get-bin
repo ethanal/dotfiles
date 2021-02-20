@@ -22,7 +22,11 @@ else
   export GOPATH="/usr/local/go-get-bin/$NAME/$VERSION"
 fi
 
-go get "$@"
+if [ "$_ostype" = Darwin ]; then
+  go get "$@"
+else
+  /usr/local/go/bin/go get "$@"
+fi
 
 sudo rm -rf "$GOPATH/pkg" "$GOPATH/src"
 
