@@ -18,8 +18,8 @@ _ostype="$(uname -s)"
 if [ "$_ostype" = Darwin ]; then
   export GOPATH="$(brew --prefix)/Cellar/go-get-$NAME/$VERSION"
 else
-  [ -f /usr/local/go-get-bin ] || (sudo mkdir -p /usr/local/go-get-bin && sudo chown -R $USER:$USER /usr/local/go-get-bin)
-  export GOPATH="/usr/local/go-get-bin/$NAME/$VERSION"
+  [ -f /usr/local/lib/go-get-bin ] || (sudo mkdir -p /usr/local/lib/go-get-bin && sudo chown -R $USER:$USER /usr/local/lib/go-get-bin)
+  export GOPATH="/usr/local/lib/go-get-bin/$NAME/$VERSION"
 fi
 
 if [ "$_ostype" = Darwin ]; then
