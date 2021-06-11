@@ -43,3 +43,6 @@
 [submodule "vim.symlink/bundle/ctrlp.vim"]
 	path = vim.symlink/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim.symlink/bundle/vim-racer"]
+	path = vim.symlink/bundle/vim-racer
+	url = https://github.com/racer-rust/vim-racer.git
