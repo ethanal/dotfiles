@@ -84,6 +84,8 @@ autocmd BufWinLeave,WinLeave * call clearmatches()
 " Syntax highlighting file patterns
 autocmd BufRead,BufNewFile Dockerfile* setfiletype dockerfile
 autocmd BufRead,BufNewFile *.proto* setfiletype proto
+autocmd BufRead,BufNewFile *.hcl set filetype=tf
+autocmd BufRead,BufNewFile *.nomad set filetype=tf
 
 " Code folding
 setlocal foldmethod=indent
