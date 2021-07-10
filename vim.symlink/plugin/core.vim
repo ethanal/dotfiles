@@ -22,12 +22,12 @@ set ttyfast
 set lazyredraw
 
 " Speed up syntax highlighting
-set re=1
-set nocursorcolumn
-set nocursorline
+"set nocursorcolumn
+"set nocursorline
+" Use new regular expression engine
+set re=0
 
 " Time out on key codes but not mappings.
-" Basically this makes terminal Vim work sanely.
 set notimeout
 set ttimeout
 set ttimeoutlen=10
@@ -64,7 +64,7 @@ nmap <leader>h :bprevious<CR>
 " Close the current buffer
 nmap <leader>w :bp <BAR> bd #<CR>
 
-" Do not show stupid q: window
+" Do not show q: window
 map q: :q
 
 " Make
@@ -83,9 +83,7 @@ autocmd BufWinLeave,WinLeave * call clearmatches()
 
 " Syntax highlighting file patterns
 autocmd BufRead,BufNewFile Dockerfile* setfiletype dockerfile
-autocmd BufRead,BufNewFile *.proto* setfiletype proto
-autocmd BufRead,BufNewFile *.hcl set filetype=tf
-autocmd BufRead,BufNewFile *.nomad set filetype=tf
+autocmd BufRead,BufNewFile *.nomad set filetype=terraform
 
 " Code folding
 setlocal foldmethod=indent
