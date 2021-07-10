@@ -1,0 +1,15 @@
+{
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "trace.server": "verbose",
+      "filetypes": ["go"]
+    }
+  },
+  "coc.source.buffer.enable": false,
+  "coc.source.around.enable": false,
+  "suggest.autoTrigger": "none",
+  "suggest.timeout": 1,
+  "diagnostic.messageTarget": "echo",
+}

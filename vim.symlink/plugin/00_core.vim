@@ -1,6 +1,7 @@
 syntax on
 set backspace=indent,eol,start
 
+set encoding=utf-8
 set autoindent
 set smartindent
 set tabstop=2
@@ -42,6 +43,7 @@ set splitright
 
 " Don't clutter workspace
 set nobackup
+set nowritebackup
 set swapfile
 set dir=~/.tmp
 
@@ -53,16 +55,16 @@ filetype plugin indent on
 
 let mapleader=" "
 " To open a new empty buffer
-nmap <leader>t :enew<cr>
+nmap <silent> <leader>t :enew<cr>
 
 " Move to the next buffer
-nmap <leader>l :bnext<CR>
+nmap <silent> <leader>l :bnext<CR>
 
 " Move to the previous buffer
-nmap <leader>h :bprevious<CR>
+nmap <silent> <leader>h :bprevious<CR>
 
 " Close the current buffer
-nmap <leader>w :bp <BAR> bd #<CR>
+nmap <silent> <leader>w :bp <BAR> bd #<CR>
 
 " Do not show q: window
 map q: :q
