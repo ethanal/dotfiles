@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-tsserver', 'coc-pairs', 'coc-rust-analyzer']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-pairs', 'coc-rust-analyzer', 'coc-json']
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.

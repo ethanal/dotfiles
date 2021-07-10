@@ -14,9 +14,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc', {'for': 'markdown'}
 Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
-Plug 'hashivim/vim-terraform', {'for': 'terraform'}
 Plug 'sheerun/vim-polyglot'
 Plug 'racer-rust/vim-racer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'psliwka/vim-smoothie'
 
 call plug#end()

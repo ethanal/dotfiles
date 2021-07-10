@@ -5,11 +5,22 @@
       "rootPatterns": ["go.mod"],
       "trace.server": "verbose",
       "filetypes": ["go"]
-    }
+    },
+    "terraform": {
+			"command": "terraform-ls",
+			"args": ["serve"],
+			"filetypes": [
+				"terraform",
+				"tf"
+			],
+			"initializationOptions": {},
+			"settings": {}
+		}
   },
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
   "suggest.autoTrigger": "none",
   "suggest.timeout": 1,
   "diagnostic.messageTarget": "echo",
+  "coc.preferences.formatOnSaveFiletypes": ["typescript", "terraform"],
 }
