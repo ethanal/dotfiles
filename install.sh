@@ -9,3 +9,4 @@ ln -sf $PWD/zshrc.symlink $HOME/.zshrc
 ln -sfT $PWD/vim.symlink $HOME/.vim
 ln -sf $PWD/tmux.conf.symlink $HOME/.tmux.conf
 ln -sf $PWD/pythonrc.symlink $HOME/.pythonrc
+ln -sf $PWD/ackrc.symlink $HOME/.ackrc

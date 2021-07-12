@@ -1,0 +1,2 @@
+--ignore-file=match:/\.chunk\.js$/
+--ignore-file=match:/\.chunk\.css$/

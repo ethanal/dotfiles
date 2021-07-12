@@ -1,24 +1,22 @@
-let g:pathogen_disabled = []
-call pathogen#infect()
+call plug#begin()
 
-runtime config/core.vim
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'mileszs/ack.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-pandoc/vim-pandoc', {'for': 'markdown'}
+Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
+Plug 'sheerun/vim-polyglot'
+Plug 'racer-rust/vim-racer'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'psliwka/vim-smoothie'
 
-function LoadConfig(name)
-    if (index(g:pathogen_disabled, a:name) < 0)
-        execute "runtime config/" . a:name . ".vim"
-    endif
-endfunction
-
-call LoadConfig("vim-colors-solarized")
-call LoadConfig("auto-pairs")
-call LoadConfig("vim-airline")
-call LoadConfig("nerdtree")
-call LoadConfig("vim-buffergator")
-call LoadConfig("vim-go")
-call LoadConfig("vim-better-whitespace")
-call LoadConfig("vim-pandoc-syntax")
-call LoadConfig("vim-pandoc")
-call LoadConfig("emmet-vim")
-call LoadConfig("ctrlp")
-
-runtime config/after.vim
+call plug#end()
