@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-tsserver', 'coc-pairs', 'coc-rust-analyzer', 'coc-json']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-pairs', 'coc-rust-analyzer', 'coc-json', 'coc-css', 'coc-prettier']
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -64,9 +64,9 @@ autocmd FileType markdown let b:coc_pairs_disabled = ['`']
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-"hi CocErrorSign ctermbg=DarkRed ctermfg=16
-"hi CocWarningSign ctermbg=NONE ctermfg=DarkYellow
-"hi CocInfoSign ctermbg=NONE ctermfg=Blue
-"hi CocHintSign ctermbg=NONE ctermfg=DarkCyan
+hi CocErrorSign ctermbg=DarkRed ctermfg=16
+hi CocWarningSign ctermbg=NONE ctermfg=DarkYellow
+hi CocInfoSign ctermbg=NONE ctermfg=Blue
+hi CocHintSign ctermbg=NONE ctermfg=DarkCyan
 
 let g:coc_disable_transparent_cursor = 1

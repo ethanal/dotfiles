@@ -20,7 +20,6 @@
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
   "suggest.autoTrigger": "none",
-  "suggest.timeout": 1,
-  "diagnostic.messageTarget": "echo",
-  "coc.preferences.formatOnSaveFiletypes": ["typescript", "terraform"],
+  "suggest.timeout": 500,
+  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "terraform", "css"]
 }
