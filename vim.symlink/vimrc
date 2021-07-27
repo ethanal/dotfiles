@@ -19,5 +19,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'racer-rust/vim-racer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psliwka/vim-smoothie'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
