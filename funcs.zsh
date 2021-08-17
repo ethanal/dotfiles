@@ -29,3 +29,12 @@ then
   alias open="reattach-to-user-namespace open"
 fi
 
+
+notes() {
+  base=$HOME/notes
+  dirname=$base/$(date +'%Y/%m-%b')
+  filename=$(date +'%b-%d-%Y.md')
+  mkdir -p $dirname
+  cd $base
+  vim $dirname/$filename
+}

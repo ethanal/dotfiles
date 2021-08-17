@@ -1,5 +1,6 @@
 call plug#begin()
 
+Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'altercation/vim-colors-solarized'
@@ -18,5 +19,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'racer-rust/vim-racer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psliwka/vim-smoothie'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
