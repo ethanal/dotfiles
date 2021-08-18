@@ -23,4 +23,9 @@
   "suggest.timeout": 1,
   "diagnostic.messageTarget": "echo",
   "coc.preferences.formatOnSaveFiletypes": ["typescript", "terraform"],
+  "go.languageServerExperimentalFeatures": {
+    // Disable diagnostics, because they'll run on the entire repo.
+    // With them disabled, go vet will run on just the package.
+    "diagnostics": false
+  },
 }
