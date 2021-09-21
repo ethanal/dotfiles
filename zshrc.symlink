@@ -9,8 +9,7 @@ ZSH_THEME="ethan"
 DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
+# VCS as dirty. This makes repository status check for large repositories much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 HIST_STAMPS="mm/dd/yyyy"
@@ -51,6 +50,7 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 export PATH=/usr/local/opt/curl/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
 export PATH=$HOME/bin:${PATH}
 export PATH=$HOME/.cargo/bin:${PATH}
 export PATH=$HOME/.dotfiles/bin:$PATH

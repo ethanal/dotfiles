@@ -26,10 +26,20 @@ bind -T copy-mode-vi WheelUpPane select-pane \; send-keys -X -N 1 scroll-up
 bind -T copy-mode-vi WheelDownPane select-pane \; send-keys -X -N 1 scroll-down
 # Don't exit on mouse up.
 unbind -T copy-mode-vi MouseDragEnd1Pane
-# Use system clipboard.
-bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'pbcopy'
 
-# Fix clipboard
-set-option -g default-command "type reattach-to-user-namespace &> /dev/null && reattach-to-user-namespace -l $SHELL || $SHELL"
+if-shell "uname | grep -q Darwin" {
+  # Use system clipboard.
+  bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'
+} {
+  # https://sunaku.github.io/tmux-yank-osc52.html
+  # transfer copied text to attached terminal with yank
+  bind-key -T copy-mode-vi y send-keys -X copy-pipe 'yank > #{pane_tty}'
+
+  # transfer most-recently copied text to attached terminal with yank
+  bind-key -n M-y run-shell 'tmux save-buffer - | yank > #{pane_tty}'
+
+  # transfer previously copied text (chosen from a menu) to attached terminal
+  bind-key -n M-Y choose-buffer 'run-shell "tmux save-buffer -b \"%%%\" - | yank > #{pane_tty}"'
+}
 
 set -g status-right "#(kubectx -c) #(kubens -c | xargs printf \"(%%s)\")"

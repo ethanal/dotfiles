@@ -1,0 +1,13 @@
+{F1}>{speed9}{-lshift}{-lwin}{obrack}{+lshift}{+lwin}
+{F2}>{speed9}{-lshift}{-lwin}{cbrack}{+lshift}{+lwin}
+[prtscr]>[mute]
+[scroll]>[vol-]
+[pause]>[vol+]
+[caps]>[escape]
+[lctrl]>[lwin]
+[lalt]>[lctrl]
+[rwin]>[lalt]
+[rctrl]>[lwin]
+[kp-lctrl]>[lwin]
+[kp-rwin]>[rctrl]
+[kp-rctrl]>[rwin]
