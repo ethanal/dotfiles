@@ -20,6 +20,12 @@
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
   "suggest.autoTrigger": "none",
+  "diagnostic.messageTarget": "echo",
+  "go.languageServerExperimentalFeatures": {
+    // Disable diagnostics, because they'll run on the entire repo.
+    // With them disabled, go vet will run on just the package.
+    "diagnostics": false
+  },
   "suggest.timeout": 500,
   "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "terraform", "css"]
 }
