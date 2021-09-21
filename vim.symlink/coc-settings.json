@@ -27,5 +27,5 @@
     "diagnostics": false
   },
   "suggest.timeout": 500,
-  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "terraform", "css"]
+  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "terraform", "css"],
 }

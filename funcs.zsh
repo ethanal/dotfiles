@@ -38,3 +38,7 @@ notes() {
   cd $base
   vim $dirname/$filename
 }
+
+# K8s
+alias kc=kubectx
+alias kns=kubens
