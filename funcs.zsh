@@ -39,6 +39,15 @@ notes() {
   vim $dirname/$filename
 }
 
+gitclose() {
+  BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  (git checkout master || git checkout main || git checkout prod) && git pull && git branch -d $BRANCH
+}
+
+
 # K8s
+alias k=kubectl
+alias kgp="kubectl get nodes"
+alias kgn="kubectl get nodes"
 alias kc=kubectx
 alias kns=kubens
