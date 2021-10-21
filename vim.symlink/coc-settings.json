@@ -19,6 +19,9 @@
   },
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
+  "diagnostic.errorSign": ">>",
+  "diagnostic.warningSign": ">>",
+  "diagnostic.infoSign": ">>",
   "suggest.autoTrigger": "none",
  // "diagnostic.messageTarget": "echo",
   "go.languageServerExperimentalFeatures": {
