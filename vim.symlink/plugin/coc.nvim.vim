@@ -65,9 +65,10 @@ autocmd FileType markdown let b:coc_pairs_disabled = ['`']
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-hi CocErrorFloat ctermfg=Blue
-hi CocWarningFloat ctermfg=Blue
-hi CocInfoFloat ctermfg=Blue
-hi CocHintFloat ctermfg=Blue
+hi CocFloatingDiagnostic cterm=none ctermbg=Blue
+hi CocErrorFloat ctermfg=Black
+hi CocWarningFloat ctermfg=Black
+hi CocInfoFloat ctermfg=Black
+hi CocHintFloat ctermfg=Black
 
 let g:coc_disable_transparent_cursor = 1

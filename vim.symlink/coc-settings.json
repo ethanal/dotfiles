@@ -19,11 +19,13 @@
   },
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
+  "diagnostic.floatConfig": {
+    "highlight": "CocFloatingDiagnostic",
+  },
   "diagnostic.errorSign": ">>",
   "diagnostic.warningSign": ">>",
   "diagnostic.infoSign": ">>",
   "suggest.autoTrigger": "none",
- // "diagnostic.messageTarget": "echo",
   "go.languageServerExperimentalFeatures": {
     // Disable diagnostics, because they'll run on the entire repo.
     // With them disabled, go vet will run on just the package.
