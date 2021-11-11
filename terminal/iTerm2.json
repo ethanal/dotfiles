@@ -1,10 +1,5 @@
 {
-  "Ansi 5 Color" : {
-    "Red Component" : 0.82745098039215681,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.50980392156862742,
-    "Green Component" : 0.21176470588235294
-  },
+  "Thin Strokes" : 3,
   "Working Directory" : "\/Users\/Ethan",
   "Prompt Before Closing 2" : 2,
   "Selected Text Color" : {
@@ -128,6 +123,12 @@
       "Text" : "8",
       "Action" : 12
     },
+    "0x6b-0x100000-0x28" : {
+      "Version" : 1,
+      "Action" : 13,
+      "Text" : "",
+      "Label" : ""
+    },
     "0xf728-0x80000-0x0" : {
       "Text" : "d",
       "Action" : 10
@@ -159,6 +160,12 @@
     "0xf702-0x240000-0x0" : {
       "Text" : "[1;5D",
       "Action" : 10
+    },
+    "0x6a-0x100000-0x26" : {
+      "Version" : 1,
+      "Action" : 13,
+      "Text" : "",
+      "Label" : ""
     },
     "0xf701-0x280000" : {
       "Text" : "0x1b 0x1b 0x5b 0x42",
@@ -292,13 +299,13 @@
       "Text" : "[1;6A",
       "Action" : 10
     },
-    "0x37-0x200000-0x0" : {
-      "Text" : "7",
-      "Action" : 12
-    },
     "0xf703-0x240000-0x0" : {
       "Text" : "[1;5C",
       "Action" : 10
+    },
+    "0x37-0x200000-0x0" : {
+      "Text" : "7",
+      "Action" : 12
     },
     "0x34-0x40000-0x0" : {
       "Text" : "0x1c",
@@ -453,9 +460,9 @@
     "Green Component" : 0.21176470588235294
   },
   "Blur" : false,
+  "Normal Font" : "Menlo-Regular 12",
   "Application Keypad Allowed" : true,
   "Vertical Spacing" : 1,
-  "Normal Font" : "Menlo-Regular 12",
   "Ansi 7 Color" : {
     "Red Component" : 0.93333333333333335,
     "Color Space" : "sRGB",
@@ -504,6 +511,11 @@
   "Unicode Normalization" : 0,
   "Visual Bell" : true,
   "ASCII Ligatures" : false,
-  "Custom Directory" : "Recycle",
-  "Thin Strokes" : 3
+  "Ansi 5 Color" : {
+    "Red Component" : 0.82745098039215681,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.50980392156862742,
+    "Green Component" : 0.21176470588235294
+  },
+  "Custom Directory" : "Recycle"
 }

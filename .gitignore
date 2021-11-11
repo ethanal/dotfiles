@@ -1,3 +1,4 @@
 .DS_STORE
 local.zsh
 vim.symlink/plugged
+Brewfile.lock.json

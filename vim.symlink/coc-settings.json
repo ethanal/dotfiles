@@ -20,7 +20,7 @@
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
   "diagnostic.floatConfig": {
-    "highlight": "CocFloatingDiagnostic",
+    "highlight": "CocFloatingDiagnostic"
   },
   "diagnostic.errorSign": ">>",
   "diagnostic.warningSign": ">>",
@@ -32,5 +32,5 @@
     "diagnostics": false
   },
   "suggest.timeout": 500,
-  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "terraform", "css"],
+  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "terraform", "css"]
 }
