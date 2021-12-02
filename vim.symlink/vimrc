@@ -16,7 +16,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc', {'for': 'markdown'}
 Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
 Plug 'sheerun/vim-polyglot'
-Plug 'racer-rust/vim-racer'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psliwka/vim-smoothie'
 Plug 'tpope/vim-commentary'
