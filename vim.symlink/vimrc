@@ -1,6 +1,6 @@
 call plug#begin()
 
-Plug 'jiangmiao/auto-pairs'
+Plug 'LunarWatcher/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'altercation/vim-colors-solarized'
@@ -16,7 +16,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc', {'for': 'markdown'}
 Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
 Plug 'sheerun/vim-polyglot'
-Plug 'prabirshrestha/vim-lsp'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psliwka/vim-smoothie'
