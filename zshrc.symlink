@@ -43,6 +43,7 @@ export LANG=en_US.UTF-8
 export AWS_PAGER=""
 
 # PATH
+export PATH=/opt/homebrew/opt/curl/bin:$PATH
 export PATH=/usr/local/opt/ncurses/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
