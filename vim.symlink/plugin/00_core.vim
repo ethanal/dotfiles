@@ -112,6 +112,3 @@ autocmd FileType qf map <buffer> dd :RemoveQFItem<cr>
 
 " Disable recording
 map q <Nop>
-
-" :(
-map w <Nop>
