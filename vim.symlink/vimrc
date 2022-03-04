@@ -20,5 +20,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psliwka/vim-smoothie'
 Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
