@@ -7,6 +7,7 @@ set signcolumn=yes
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Give more space for displaying messages.
 set cmdheight=2
