@@ -47,7 +47,9 @@ gitclose() {
 
 # K8s
 alias k=kubectl
-alias kgp="kubectl get nodes"
+alias kgp="kubectl get pods"
 alias kgn="kubectl get nodes"
 alias kc=kubectx
 alias kns=kubens
+
+alias gpt=/usr/local/bin/gt
