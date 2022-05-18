@@ -2799,3 +2799,5 @@ endif
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
+
+execute printf('hello my name is ethan lowman and i am a data dog')
