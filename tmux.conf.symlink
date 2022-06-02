@@ -43,3 +43,4 @@ if-shell "uname | grep -q Darwin" {
 }
 
 set -g status-right "#(kubectx -c) #(kubens -c | xargs printf \"(%%s)\")"
+set -g status-right-length 60
