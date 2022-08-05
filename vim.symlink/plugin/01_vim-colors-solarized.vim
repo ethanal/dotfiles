@@ -9,3 +9,4 @@ colorscheme solarized
 " Fixes for Solarized dark black
 highlight clear SignColumn
 highlight clear LineNr
+highlight LineNr ctermfg=8
