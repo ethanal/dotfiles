@@ -1,5 +1,5 @@
 {
-  "Thin Strokes" : 3,
+  "Custom Directory" : "Recycle",
   "Working Directory" : "\/Users\/Ethan",
   "Prompt Before Closing 2" : 2,
   "Selected Text Color" : {
@@ -96,6 +96,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.35916060209274292
   },
+  "Use Custom Tab Title" : false,
   "Shortcut" : "",
   "Background Image Location" : "",
   "Bold Color" : {
@@ -428,7 +429,7 @@
   },
   "Name" : "Default",
   "Blinking Cursor" : false,
-  "Guid" : "E28E4A3F-8D31-4843-BAEB-835F8D3FC16D",
+  "Guid" : "807D7F24-D996-4DDF-9A0A-FD35B3793B31",
   "Idle Code" : 0,
   "Ansi 10 Color" : {
     "Red Component" : 0.52156862745098043,
@@ -438,10 +439,11 @@
     "Green Component" : 0.61176470588235299
   },
   "Ansi 8 Color" : {
-    "Red Component" : 0,
+    "Red Component" : 0.396078431372549,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.21176470588235294,
-    "Green Component" : 0.16862745098039217
+    "Blue Component" : 0.51372549019607838,
+    "Alpha Component" : 1,
+    "Green Component" : 0.4823529411764706
   },
   "Badge Color" : {
     "Red Component" : 1,
@@ -498,6 +500,7 @@
     "Green Component" : 0.16862745098039217
   },
   "Screen" : -1,
+  "Custom Tab Title" : "",
   "Initial Use Transparency" : true,
   "Non Ascii Font" : "Monaco 12",
   "Ansi 13 Color" : {
@@ -511,11 +514,11 @@
   "Unicode Normalization" : 0,
   "Visual Bell" : true,
   "ASCII Ligatures" : false,
+  "Thin Strokes" : 3,
   "Ansi 5 Color" : {
     "Red Component" : 0.82745098039215681,
     "Color Space" : "sRGB",
     "Blue Component" : 0.50980392156862742,
     "Green Component" : 0.21176470588235294
-  },
-  "Custom Directory" : "Recycle"
+  }
 }

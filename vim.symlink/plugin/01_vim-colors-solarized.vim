@@ -5,5 +5,7 @@ set background=dark
 let g:solarized_termtrans=1
 
 colorscheme solarized
-highlight LineNr ctermbg=8
 
+" Fixes for Solarized dark black
+highlight clear SignColumn
+highlight clear LineNr

@@ -13,7 +13,9 @@ set ignorecase
 set smartcase  " Don't ignore case in searches when pattern contains upper case chars
 set ruler
 set number
-set relativenumber
+" Useful, but hard for other people to point out line numbers when looking at
+" your screen.
+" set relativenumber
 set clipboard=unnamed
 set wildmenu
 set shell=/bin/bash
