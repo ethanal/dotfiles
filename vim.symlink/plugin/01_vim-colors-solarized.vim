@@ -10,3 +10,4 @@ colorscheme solarized
 highlight clear SignColumn
 highlight clear LineNr
 highlight LineNr ctermfg=8
+highlight Visual ctermfg=10 ctermbg=0 term=reverse
