@@ -66,10 +66,15 @@ source $HOME/.dotfiles/funcs.zsh
 source $HOME/.dotfiles/local.zsh
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/nomad nomad
-complete -o nospace -C /usr/local/bin/terraform terraform
 
 # google-cloud-sdk brew caveat
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
+if [ -d /opt/homebrew ]; then
+  complete -o nospace -C /opt/homebrew/bin/terraform nomad
+  complete -o nospace -C /opt/homebrew/bin/terraform terraform
+else
+  complete -o nospace -C /usr/local/bin/nomad nomad
+  complete -o nospace -C /usr/local/bin/terraform terraform
+fi

@@ -53,5 +53,5 @@ alias kc=kubectx
 alias kns=kubens
 
 alias gpt=/usr/local/bin/gt
-
 alias jl="jq -R 'fromjson?'"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
