@@ -7,15 +7,12 @@
       "filetypes": ["go"]
     },
     "terraform": {
-			"command": "terraform-ls",
-			"args": ["serve"],
-			"filetypes": [
-				"terraform",
-				"tf"
-			],
-			"initializationOptions": {},
-			"settings": {}
-		}
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    }
   },
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
@@ -26,11 +23,14 @@
   "diagnostic.warningSign": ">>",
   "diagnostic.infoSign": ">>",
   "suggest.autoTrigger": "none",
-  "go.languageServerExperimentalFeatures": {
-    // Disable diagnostics, because they'll run on the entire repo.
-    // With them disabled, go vet will run on just the package.
-    "diagnostics": false
-  },
   "suggest.timeout": 500,
-  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "terraform", "css"]
+  "suggest.noselect": true,
+  "notification.disabledProgressSources": ["*"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescript",
+    "typescriptreact",
+    "terraform",
+    "css",
+    "jsonc"
+  ]
 }
