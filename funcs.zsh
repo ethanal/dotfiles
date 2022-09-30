@@ -52,7 +52,7 @@ alias kgn="kubectl get nodes"
 alias kc=kubectx
 alias kns=kubens
 
-alias gpt=/usr/local/bin/gt
+alias gpt=/opt/homebrew/bin/graphite
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 jl() {
