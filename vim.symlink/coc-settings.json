@@ -33,5 +33,6 @@
     "css",
     "jsonc",
     "nomad"
-  ]
+  ],
+  "pyright.inlayHints.enable": false
 }

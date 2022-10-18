@@ -48,6 +48,7 @@ gitclose() {
 # K8s
 alias k=kubectl
 alias kgp="kubectl get pods"
+alias kdp="kubectl describe pod"
 alias kgn="kubectl get nodes"
 alias kc=kubectx
 alias kns=kubens
