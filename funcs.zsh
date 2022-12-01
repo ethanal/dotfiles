@@ -27,6 +27,8 @@ then
 
   # This makes open work in tmux.
   alias open="reattach-to-user-namespace open"
+
+  alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 fi
 
 

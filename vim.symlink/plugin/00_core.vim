@@ -96,7 +96,9 @@ set nofoldenable
 
 " Enable mouse
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 " When using `dd` in the quickfix list, remove the item from the quickfix list.
 " https://stackoverflow.com/questions/42905008/quickfix-list-how-to-add-and-remove-entries

@@ -84,3 +84,8 @@ else
   complete -o nospace -C /usr/local/bin/nomad nomad
   complete -o nospace -C /usr/local/bin/terraform terraform
 fi
+
+
+export ITERM2_SQUELCH_MARK=1
+test -e "$HOME/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

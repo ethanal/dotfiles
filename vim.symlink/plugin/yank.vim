@@ -1,5 +1,5 @@
 let s:uname = system("uname -s")
-if ! s:uname == "Darwin"
+if s:uname != "Darwin"
   " copy to attached terminal using the yank(1) script:
   " https://github.com/sunaku/home/blob/master/bin/yank
   function! Yank(text) abort
