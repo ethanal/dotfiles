@@ -13,7 +13,7 @@ local function paste()
   end
 
   local lines = vim.fn.split(s, "\n")
-  if len(lines) == 1 then
+  if vim.fn.len(lines) == 1 then
     return {lines, "v"}
   end
   return {lines, "V"}
