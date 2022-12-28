@@ -21,5 +21,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psliwka/vim-smoothie'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
+Plug 'ojroques/nvim-oscyank'
 
 call plug#end()
