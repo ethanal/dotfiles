@@ -5,7 +5,7 @@ local function copy(lines, _)
 end
 
 local function paste()
-  local s = vim.fn.system("curl --unix-socket /tmp/com.ethanlowman.pbserver.sock http://-")
+  local s = vim.fn.system("curl -s --unix-socket /tmp/com.ethanlowman.pbserver.sock http://-")
   local reg = vim.fn.getreg("")
 
   if s == reg or s == nil then
