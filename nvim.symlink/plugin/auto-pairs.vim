@@ -1,4 +1,6 @@
 let g:AutoPairsMultilineClose = 0
+let g:AutoPairsShortcutToggle = '<C-P>'
+
 
 let g:AutoPairs = {'{': '}'}
 

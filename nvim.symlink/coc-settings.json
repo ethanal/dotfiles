@@ -3,7 +3,6 @@
     "go": {
       "command": "gopls",
       "rootPatterns": ["go.mod"],
-      "trace.server": "verbose",
       "filetypes": ["go"]
     },
     "terraform": {
@@ -22,6 +21,8 @@
   "diagnostic.errorSign": ">>",
   "diagnostic.warningSign": ">>",
   "diagnostic.infoSign": ">>",
+  // "diagnostic.virtualText": false,
+  // "diagnostic.checkCurrentLine": true,
   "suggest.autoTrigger": "none",
   "suggest.timeout": 500,
   "suggest.noselect": true,

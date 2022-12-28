@@ -41,19 +41,12 @@ export LANG=en_US.UTF-8
 
 export AWS_PAGER=""
 
-# PATH
-export PATH=/opt/homebrew/opt/curl/bin:$PATH
-export PATH=/usr/local/opt/ncurses/bin:$PATH
-export PATH=/usr/local/heroku/bin:$PATH
-export PATH=/usr/local/share/npm/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
-export PATH=/usr/local/opt/curl/bin:$PATH
-export PATH=/usr/local/go/bin:$PATH
-
 if [ -f /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+
+  # Use GNU coreutils by default.
+  export PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:${PATH}
+  export MANPATH=$(brew --prefix)/opt/coreutils/libexec/gnuman:${MANPATH}
 fi
 
 export PATH=$HOME/bin:${PATH}
@@ -85,7 +78,5 @@ else
   complete -o nospace -C /usr/local/bin/terraform terraform
 fi
 
-
 export ITERM2_SQUELCH_MARK=1
 test -e "$HOME/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

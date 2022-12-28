@@ -16,7 +16,6 @@ set number
 " Useful, but hard for other people to point out line numbers when looking at
 " your screen.
 " set relativenumber
-set clipboard=unnamed
 set wildmenu
 set shell=/bin/bash
 
@@ -24,9 +23,8 @@ set shell=/bin/bash
 set ttyfast
 set lazyredraw
 
-" Speed up syntax highlighting
-"set nocursorcolumn
-"set nocursorline
+set cursorline
+
 " Use new regular expression engine
 set re=0
 
@@ -88,6 +86,9 @@ autocmd BufWinLeave,WinLeave * call clearmatches()
 " Syntax highlighting file patterns
 autocmd BufRead,BufNewFile Dockerfile* setfiletype dockerfile
 autocmd BufRead,BufNewFile *.nomad set filetype=terraform
+
+" Turn off search highlighting with \\
+nnoremap <silent> \\ :noh<return>
 
 " Code folding
 setlocal foldmethod=indent

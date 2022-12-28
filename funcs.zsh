@@ -1,3 +1,7 @@
+if command -v nvim > /dev/null; then
+  alias vim=nvim
+fi
+
 alias gitprune="git remote prune origin"
 
 alias dockerrmdangling="docker images --filter 'dangling=true' -q | xargs docker rmi"
@@ -56,7 +60,6 @@ alias kc=kubectx
 alias kns=kubens
 
 alias gpt=/opt/homebrew/bin/graphite
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 jl() {
   grep "^{" | jq -R 'fromjson?'

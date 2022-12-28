@@ -1,9 +1,10 @@
 call plug#begin()
 
+Plug 'ethanal/NeoSolarized'
 Plug 'LunarWatcher/auto-pairs'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
-Plug 'altercation/vim-colors-solarized'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', {'for': 'go'}
@@ -12,7 +13,6 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc', {'for': 'markdown'}
 Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
 Plug 'sheerun/vim-polyglot'

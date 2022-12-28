@@ -1,5 +1,5 @@
 .DS_STORE
 local.zsh
-vim.symlink/plugged
+nvim.symlink/plugged
 Brewfile.lock.json
 .metals

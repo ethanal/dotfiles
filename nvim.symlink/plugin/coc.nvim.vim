@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-css', 'coc-pyright', 'coc-prettier']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-css', 'coc-pyright', 'coc-prettier', 'coc-go']
 
 " Some servers have issues with backup files, see #649.
 set nobackup
@@ -77,10 +77,11 @@ endfunction
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-hi CocFloatingDiagnostic cterm=none ctermbg=Blue
-hi CocErrorFloat ctermfg=Black
-hi CocWarningFloat ctermfg=Black
-hi CocInfoFloat ctermfg=Black
-hi CocHintFloat ctermfg=Black
+hi CocFloatingDiagnostic guibg=#839496 guifg=#002b36 gui=none
+hi CocErrorFloat guifg=#002b36
+hi CocWarningFloat guifg=#002b36
+hi CocHintFloat guifg=#002b36
+hi CocInfoFloat guifg=#002b36
+hi DiagnosticHint guifg=#657b83
 
 let g:coc_disable_transparent_cursor = 1
