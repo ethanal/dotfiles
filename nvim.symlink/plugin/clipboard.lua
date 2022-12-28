@@ -5,10 +5,10 @@ local function copy(lines, _)
 end
 
 local function paste()
-  local s = vim.fn.system("curl http://127.0.0.1:7264")
+  local s = vim.fn.system("curl -s http://127.0.0.1:7264")
   local reg = vim.fn.getreg("")
 
-  if true or s == reg or s == nil then
+  if s == reg or s == nil then
     return {vim.fn.split(reg, "\n"), vim.fn.getregtype("")}
   end
 
