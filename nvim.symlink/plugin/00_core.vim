@@ -87,8 +87,8 @@ autocmd BufWinLeave,WinLeave * call clearmatches()
 autocmd BufRead,BufNewFile Dockerfile* setfiletype dockerfile
 autocmd BufRead,BufNewFile *.nomad set filetype=terraform
 
-" Turn off search highlighting with \\
-nnoremap <silent> \\ :noh<return>
+" Turn off search highlighting
+nnoremap <silent> <Esc> :noh<return>
 
 " Code folding
 setlocal foldmethod=indent
@@ -119,4 +119,4 @@ autocmd FileType qf map <buffer> dd :RemoveQFItem<cr>
 map q <Nop>
 
 " Make option+right arrow advance words.
-map <Esc>f w
+map f w

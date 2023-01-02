@@ -6,8 +6,11 @@ require("nvim-tree").setup({
 	hijack_cursor = true,
 	actions = {
 		open_file = {
-			quit_on_open = true
-		}
+			quit_on_open = true,
+			window_picker = {
+				enable = false
+			}
+		},
 	},
 	view = {
 		signcolumn = "auto",
@@ -31,7 +34,7 @@ require("nvim-tree").setup({
 	            file = false,
 	            folder = false,
 	            folder_arrow = true,
-	            git = false,				
+	            git = false,
 			}
 		}
 	}
