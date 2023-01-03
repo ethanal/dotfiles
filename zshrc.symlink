@@ -54,12 +54,15 @@ export PATH=$HOME/.cargo/bin:${PATH}
 export PATH=$HOME/.dotfiles/bin:$PATH
 export PATH=/snap/bin:$PATH
 
-fpath=(/usr/local/share/zsh-completions $fpath)
+if [ $(uname -s) = "Darwin" ]
+then
+  fpath=(
+    $(brew --prefix)/share/zsh/site-functions
+    $fpath
+  )
+fi
 
 source $HOME/.dotfiles/funcs.zsh
-source $HOME/.dotfiles/local.zsh
-
-autoload -U +X bashcompinit && bashcompinit
 
 if [ -e /usr/local/Caskroom/google-cloud-sdk ]; then
   source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
@@ -81,3 +84,10 @@ fi
 
 export ITERM2_SQUELCH_MARK=1
 test -e "$HOME/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+source $HOME/.dotfiles/local.zsh
