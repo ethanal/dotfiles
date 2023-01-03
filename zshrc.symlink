@@ -34,7 +34,7 @@ export LDFLAGS="-L/usr/local/opt/ncurses/lib"
 export CPPFLAGS="-I/usr/local/opt/ncurses/include"
 
 export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
-export EDITOR=/usr/bin/vim
+export EDITOR=`which nvim`
 export PYTHONSTARTUP="$HOME/.pythonrc"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -45,8 +45,12 @@ if [ -f /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 
   # Use GNU coreutils by default.
-  export PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:${PATH}
-  export MANPATH=$(brew --prefix)/opt/coreutils/libexec/gnuman:${MANPATH}
+  export PATH=$(brew --prefix coreutils)/libexec/gnubin:${PATH}
+  export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:${MANPATH}
+
+  # Use GNU findutils by default.
+  export PATH=$(brew --prefix findutils)/libexec/gnubin:${PATH}
+  export MANPATH=$(brew --prefix findutils)/libexec/gnuman:${MANPATH}
 fi
 
 export PATH=$HOME/bin:${PATH}
