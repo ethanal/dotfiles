@@ -62,5 +62,5 @@ alias kns=kubens
 alias gpt=/opt/homebrew/bin/graphite
 
 jl() {
-  grep "^{" | jq -R 'fromjson?'
+  jq -r -R '. as $raw | try fromjson catch $raw'
 }

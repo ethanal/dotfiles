@@ -9,11 +9,12 @@ require("nvim-tree").setup({
 			quit_on_open = true,
 			window_picker = {
 				enable = false
-			}
+			},
 		},
 	},
 	view = {
 		signcolumn = "auto",
+		width = 60,
 	},
 	renderer = {
 		indent_markers = {

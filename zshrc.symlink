@@ -30,9 +30,6 @@ setopt INC_APPEND_HISTORY SHARE_HISTORY
 setopt HIST_REDUCE_BLANKS
 setopt interactivecomments
 
-export LDFLAGS="-L/usr/local/opt/ncurses/lib"
-export CPPFLAGS="-I/usr/local/opt/ncurses/include"
-
 export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 export EDITOR=`which nvim`
 export PYTHONSTARTUP="$HOME/.pythonrc"
