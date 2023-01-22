@@ -51,6 +51,7 @@ if [ -f /opt/homebrew/bin/brew ]; then
 fi
 
 export PATH=$HOME/bin:${PATH}
+export PATH=/usr/local/go/bin:${PATH}
 export PATH=$HOME/.cargo/bin:${PATH}
 export PATH=$HOME/.dotfiles/bin:$PATH
 export PATH=/snap/bin:$PATH
