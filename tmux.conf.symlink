@@ -28,6 +28,7 @@ bind -T copy-mode-vi WheelDownPane select-pane \; send-keys -X -N 1 scroll-down
 unbind -T copy-mode-vi MouseDragEnd1Pane
 
 set -s set-clipboard on
+bind-key -T copy-mode-vi y send -X copy-selection
 
 set -g status-right "#(kubectx -c) #(kubens -c | xargs printf \"(%%s)\")"
 set -g status-right-length 60
