@@ -10,7 +10,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mattn/emmet-vim', {'for': 'html'}
-Plug 'mileszs/ack.vim'
+Plug 'jremmen/vim-ripgrep'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-pandoc/vim-pandoc', {'for': 'markdown'}
