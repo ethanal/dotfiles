@@ -93,3 +93,5 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
 source $HOME/.dotfiles/local.zsh
+
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc

@@ -1,0 +1,5 @@
+--hidden
+--glob=!.git/*
+--glob=!*.chunk.js
+--glob=!*.chunk.css
+--smart-case
