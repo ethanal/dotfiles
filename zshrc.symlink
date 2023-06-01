@@ -48,6 +48,14 @@ if [ -f /opt/homebrew/bin/brew ]; then
   # Use GNU findutils by default.
   export PATH=$(brew --prefix findutils)/libexec/gnubin:${PATH}
   export MANPATH=$(brew --prefix findutils)/libexec/gnuman:${MANPATH}
+
+  # Use GNU sed by default.
+  export PATH=$(brew --prefix gnu-sed)/libexec/gnubin:${PATH}
+  export MANPATH=$(brew --prefix gnu-sed)/libexec/gnuman:${MANPATH}
+
+  # Use GNU tar by default.
+  export PATH=$(brew --prefix gnu-tar)/libexec/gnubin:${PATH}
+  export MANPATH=$(brew --prefix gnu-tar)/libexec/gnuman:${MANPATH}
 fi
 
 export PATH=$HOME/bin:${PATH}
