@@ -38,6 +38,16 @@ require("nvim-tree").setup({
 	            git = false,
 			}
 		}
+	},
+	git = {
+		timeout = 1000,
+	},
+	filters = {
+		custom = {
+			"^\\.git$",
+			"^\\.bazel-build-stamp$",
+			"^\\.DS_Store$"
+		}
 	}
 })
 
