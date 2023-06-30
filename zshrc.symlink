@@ -56,6 +56,9 @@ if [ -f /opt/homebrew/bin/brew ]; then
   # Use GNU tar by default.
   export PATH=$(brew --prefix gnu-tar)/libexec/gnubin:${PATH}
   export MANPATH=$(brew --prefix gnu-tar)/libexec/gnuman:${MANPATH}
+
+  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
 fi
 
 export PATH=$HOME/bin:${PATH}
@@ -100,6 +103,5 @@ compinit
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-source $HOME/.dotfiles/local.zsh
-
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+source $HOME/.dotfiles/local.zsh
