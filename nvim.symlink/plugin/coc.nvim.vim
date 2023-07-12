@@ -85,3 +85,11 @@ hi CocInfoFloat guifg=#002b36
 hi DiagnosticHint guifg=#657b83
 
 let g:coc_disable_transparent_cursor = 1
+
+
+" Make scroll work in pop-ups.
+" https://github.com/neoclide/coc.nvim/issues/609#issuecomment-715461414
+nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
