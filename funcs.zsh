@@ -59,8 +59,6 @@ alias kgn="kubectl get nodes"
 alias kc=kubectx
 alias kns=kubens
 
-alias gpt=/opt/homebrew/bin/graphite
-
 jl() {
   jq -r -R '. as $raw | try fromjson catch $raw'
 }

@@ -1,5 +1,3 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 require("nvim-tree").setup({
@@ -67,6 +65,7 @@ function nvim_tree_focus_or_toggle()
 			view.focus()
 		end
 	else
+		vim.cmd("NvimTreeFindFile")
 		vim.cmd("NvimTreeOpen")
 	end
 end

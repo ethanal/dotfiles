@@ -8,11 +8,18 @@ set nowritebackup
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
+" GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> GD :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ca <Plug>(coc-codeaction-line)
+
+" Symbol Navigation
+nnoremap <silent> <Leader>o :<C-u>CocList outline<cr>
+nnoremap <silent> <Leader>s :<C-u>CocList symbols<cr>
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -53,13 +60,6 @@ endif
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> GD :call CocAction('jumpDefinition', 'vsplit')<CR>
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
