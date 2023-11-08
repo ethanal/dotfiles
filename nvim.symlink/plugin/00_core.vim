@@ -54,8 +54,6 @@ autocmd FileType make setlocal noexpandtab
 filetype plugin indent on
 
 let mapleader=" "
-" To open a new empty buffer
-nmap <silent> <leader>t :enew<cr>
 
 " Move to the next buffer
 nmap <silent> <leader>l :bnext<CR>
