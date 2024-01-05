@@ -58,6 +58,9 @@ if [ -f /opt/homebrew/bin/brew ]; then
   export PATH=$(brew --prefix gnu-tar)/libexec/gnubin:${PATH}
   export MANPATH=$(brew --prefix gnu-tar)/libexec/gnuman:${MANPATH}
 
+  # Add openjdk to path.
+  export PATH=$(brew --prefix openjdk)/bin:${PATH}
+
   export PATH="$(brew --prefix libpq)/bin:${PATH}"
 fi
 
@@ -105,3 +108,4 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 source $HOME/.dotfiles/local.zsh
+

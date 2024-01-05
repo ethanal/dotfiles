@@ -14,8 +14,6 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'vim-pandoc/vim-pandoc', {'for': 'markdown'}
-Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
 Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
