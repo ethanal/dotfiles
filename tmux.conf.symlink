@@ -37,3 +37,10 @@ set -g status-right-length 60
 set-option -g renumber-windows on
 bind-key -r < swap-window -d -t -1
 bind-key -r > swap-window -d -t +1
+
+# Recommendations from coc.nvim
+# - ERROR `escape-time` (500) is higher than 300ms
+# set escape-time in ~/.tmux.conf
+set-option -sg escape-time 10
+# - WARNING `focus-events` is not enabled. |'autoread'| may not work.
+set-option -g focus-events on

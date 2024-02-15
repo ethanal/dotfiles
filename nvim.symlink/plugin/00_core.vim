@@ -117,7 +117,7 @@ autocmd FileType qf map <buffer> dd :RemoveQFItem<cr>
 map q <Nop>
 
 " Make option+right arrow advance words.
-map f w
+" map f w
 
 " Don't de-indent labels
 set cinoptions+=L0

@@ -31,10 +31,10 @@
   "diagnostic.errorSign": ">>",
   "diagnostic.warningSign": ">>",
   "diagnostic.infoSign": ">>",
-  // "diagnostic.virtualText": false,
-  // "diagnostic.checkCurrentLine": true,
+  "diagnostic.virtualText": false,
+  "diagnostic.checkCurrentLine": true,
   "suggest.autoTrigger": "none",
-  "suggest.timeout": 500,
+  "suggest.timeout": 1000,
   "suggest.noselect": true,
   "notification.disabledProgressSources": ["*"],
   "coc.preferences.formatOnSaveFiletypes": [
@@ -45,5 +45,19 @@
     "jsonc",
     "nomad"
   ],
-  "pyright.inlayHints.enable": false
+  "pyright.inlayHints.enable": false,
+  "eslint.autoFixOnSave": true,
+  // "rust-analyzer.inlayHints.typeHints.enable": true
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.cargo.extraArgs": ["--target-dir", ".rust-analyzer/target"],
+  "rust-analyzer.inlayHints.maxLength": 100,
+  "workspace.ignoredFolders": ["$HOME", "$HOME/.cargo/**", "$HOME/.rustup/**"],
+  "[python]": {
+    "inlayHint.enable": false
+  },
+  "[rust]": {
+    // "inlayHint.enable": true
+    "inlayHint.display": false
+  },
+  "sql.database": "postgresql"
 }

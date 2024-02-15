@@ -65,9 +65,10 @@ function nvim_tree_focus_or_toggle()
 			view.focus()
 		end
 	else
-		vim.cmd("NvimTreeFindFile")
+		-- vim.cmd("NvimTreeFindFile")
 		vim.cmd("NvimTreeOpen")
 	end
 end
 
 vim.keymap.set("n", "<leader>n", "<CMD>lua nvim_tree_focus_or_toggle()<CR>")
+vim.keymap.set("n", "<leader>f", "<CMD>NvimTreeFindFile<CR>")
