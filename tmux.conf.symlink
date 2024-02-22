@@ -15,6 +15,16 @@ bind -n 'C-k' run "(tmux display-message -p '#{pane_current_command}' | grep -iq
 bind -n 'C-l' run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-l) || tmux select-pane -R"
 #bind -n 'C-\' run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys 'C-\\') || tmux select-pane -l"
 
+# Resize panes with arrow keys
+unbind-key -T prefix Up
+unbind-key -T prefix Down
+unbind-key -T prefix Left
+unbind-key -T prefix Right
+bind-key -r -T prefix Up resize-pane -U
+bind-key -r -T prefix Down resize-pane -D
+bind-key -r -T prefix Left resize-pane -L
+bind-key -r -T prefix Right resize-pane -R
+
 # Open new panes with cwd.
 bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
