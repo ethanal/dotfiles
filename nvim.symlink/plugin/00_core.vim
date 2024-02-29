@@ -121,3 +121,6 @@ map q <Nop>
 
 " Don't de-indent labels
 set cinoptions+=L0
+
+" Option-Backspace to delete words
+imap <Esc><BS> <C-w>
