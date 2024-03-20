@@ -17,10 +17,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rhubarb'
 Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
-Plug 'neoclide/coc.nvim', {'commit': '3dc6153a85ed0f185abec1deb972a66af3fbbfb4'}
+" Plug 'neoclide/coc.nvim', {'commit': '3dc6153a85ed0f185abec1deb972a66af3fbbfb4'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psliwka/vim-smoothie'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 Plug 'ojroques/nvim-oscyank'
+Plug 'github/copilot.vim'
 
 call plug#end()

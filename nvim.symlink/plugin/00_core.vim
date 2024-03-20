@@ -124,3 +124,5 @@ set cinoptions+=L0
 
 " Option-Backspace to delete words
 imap <Esc><BS> <C-w>
+
+command! CAB bufd bwipeout

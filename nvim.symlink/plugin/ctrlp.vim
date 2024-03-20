@@ -8,3 +8,6 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 endif
+
+let g:ctrlp_extensions = ['git']
+let g:ctrlp_match_window = 'results:100'

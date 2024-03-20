@@ -28,36 +28,39 @@
   "diagnostic.floatConfig": {
     "highlight": "CocFloatingDiagnostic"
   },
+  "diagnostic.checkCurrentLine": true,
   "diagnostic.errorSign": ">>",
-  "diagnostic.warningSign": ">>",
   "diagnostic.infoSign": ">>",
   "diagnostic.virtualText": false,
-  "diagnostic.checkCurrentLine": true,
-  "suggest.autoTrigger": "none",
-  "suggest.timeout": 1000,
-  "suggest.noselect": true,
-  "notification.disabledProgressSources": ["*"],
-  "coc.preferences.formatOnSaveFiletypes": [
-    "typescript",
-    "typescriptreact",
-    "terraform",
-    "css",
-    "jsonc",
-    "nomad"
-  ],
-  "pyright.inlayHints.enable": false,
+  "diagnostic.warningSign": ">>",
   "eslint.autoFixOnSave": true,
-  // "rust-analyzer.inlayHints.typeHints.enable": true
-  "rust-analyzer.check.command": "clippy",
+  "inlayHint.display": false,
+  "notification.disabledProgressSources": ["*"],
+  "pyright.disableDiagnostics": true,
   "rust-analyzer.cargo.extraArgs": ["--target-dir", ".rust-analyzer/target"],
+  "rust-analyzer.check.command": "clippy",
   "rust-analyzer.inlayHints.maxLength": 100,
+  "sql.database": "postgresql",
+  "suggest.autoTrigger": "none",
+  "suggest.noselect": true,
+  "suggest.timeout": 1000,
   "workspace.ignoredFolders": ["$HOME", "$HOME/.cargo/**", "$HOME/.rustup/**"],
-  "[python]": {
-    "inlayHint.enable": false
+  "[typescript]": {
+    "coc.preferences.formatOnSave": true
   },
-  "[rust]": {
-    // "inlayHint.enable": true
-    "inlayHint.display": false
+  "[typescriptreact]": {
+    "coc.preferences.formatOnSave": true
   },
-  "sql.database": "postgresql"
+  "[terraform]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[css]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[jsonc]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[nomad]": {
+    "coc.preferences.formatOnSave": true
+  }
 }
