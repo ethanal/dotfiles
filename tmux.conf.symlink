@@ -54,3 +54,5 @@ bind-key -r > swap-window -d -t +1
 set-option -sg escape-time 10
 # - WARNING `focus-events` is not enabled. |'autoread'| may not work.
 set-option -g focus-events on
+
+set-option -g history-limit 1000000
