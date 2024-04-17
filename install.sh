@@ -2,6 +2,7 @@
 
 mkdir -p $HOME/.tmp
 touch local.zsh
+# TODO: fix for nix
 mkdir -p ~/.oh-my-zsh/custom/themes
 ln -sf $PWD/ethan.zsh-theme $HOME/.oh-my-zsh/custom/themes/ethan.zsh-theme
 
