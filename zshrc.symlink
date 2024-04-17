@@ -1,7 +1,7 @@
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/custom/themes/
+ZSH_CUSTOM=$HOME/.dotfiles/zsh_custom
 ZSH_THEME="ethan"
-#
+
 # Uncomment this to disable bi-weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
 
