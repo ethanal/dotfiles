@@ -1,5 +1,5 @@
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
+# Look in ~/.oh-my-zsh/custom/themes/
 ZSH_THEME="ethan"
 #
 # Uncomment this to disable bi-weekly auto-update checks
@@ -18,8 +18,8 @@ plugins=(git docker aws brew history)
 # Path to your oh-my-zsh configuration.
 if [ -z "$ZSH" ]; then
   ZSH=$HOME/.oh-my-zsh
-  source $ZSH/oh-my-zsh.sh
 fi
+source $ZSH/oh-my-zsh.sh
 
 # ZSH config
 export CLICOLOR=true
