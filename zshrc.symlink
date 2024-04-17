@@ -17,13 +17,9 @@ plugins=(git docker aws brew history)
 
 # Path to your oh-my-zsh configuration.
 if [ -z "$ZSH" ]; then
-  if [ -n "$OH_MY_ZSH_PATH" ]; then
-    ZSH=$OH_MY_ZSH_PATH/.oh-my-zsh
-  else
-    ZSH=$HOME/.oh-my-zsh
-  fi
-  source $ZSH/oh-my-zsh.sh
+  ZSH=$HOME/.oh-my-zsh
 fi
+source $ZSH/oh-my-zsh.sh
 
 # ZSH config
 export CLICOLOR=true
