@@ -17,7 +17,6 @@ set number
 " your screen.
 " set relativenumber
 set wildmenu
-set shell=/bin/bash
 
 " Speed stuff up
 set ttyfast
