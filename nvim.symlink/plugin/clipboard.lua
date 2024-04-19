@@ -34,3 +34,13 @@ else
   }
 end
 
+function toggle_clipboard()
+  if vim.tbl_contains(vim.opt.clipboard:get(), "unnamed") then
+    vim.opt.clipboard = ""
+    print("Switched to default clipboard behavior")
+  else
+    vim.opt.clipboard = "unnamed"
+    print("Switched to custom clipboard behavior")
+  end
+end
+vim.cmd("command! ToggleClipboard :lua toggle_clipboard()")
