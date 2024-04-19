@@ -1,3 +1,5 @@
+zstyle ':omz:alpha:lib:git' async-prompt no
+
 # Set name of the theme to load.
 ZSH_CUSTOM=$HOME/.dotfiles/zsh_custom
 ZSH_THEME="ethan"
