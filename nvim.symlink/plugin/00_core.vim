@@ -61,7 +61,7 @@ nmap <silent> <leader>l :bnext<CR>
 nmap <silent> <leader>h :bprevious<CR>
 
 " Close the current buffer
-nmap <silent> <leader>w :bp <BAR> bd #<CR>
+nmap <silent> <leader>w :bd<CR>
 
 " Do not show q: window
 map q: :q
@@ -124,4 +124,4 @@ set cinoptions+=L0
 " Option-Backspace to delete words
 imap <Esc><BS> <C-w>
 
-command! CAB bufd bwipeout
+command! CAB bufdo! bwipeout

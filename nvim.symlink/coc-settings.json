@@ -37,7 +37,7 @@
   "inlayHint.display": false,
   "notification.disabledProgressSources": ["*"],
   "pyright.disableDiagnostics": true,
-  "rust-analyzer.cargo.extraArgs": ["--target-dir", ".rust-analyzer/target"],
+  "rust-analyzer.cargo.extraArgs": ["--target-dir", "target/.rust-analyzer"],
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.inlayHints.maxLength": 100,
   "sql.database": "postgresql",

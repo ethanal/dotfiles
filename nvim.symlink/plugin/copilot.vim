@@ -5,4 +5,7 @@ let g:copilot_filetypes = {
 \ 'markdown': v:false,
 \ }
 
-imap <C-I> <Plug>(copilot-suggest)
+command! CE Copilot enable
+command! CD Copilot disable
+imap <C-Y> <Plug>(copilot-suggest)
+imap <C-L> <Plug>(copilot-accept-word)
