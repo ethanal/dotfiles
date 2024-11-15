@@ -111,3 +111,5 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 source $HOME/.dotfiles/local.zsh
+
+export CLASSPATH=/usr/local/lib/tla2tools.jar

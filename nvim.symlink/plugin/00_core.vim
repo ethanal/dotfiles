@@ -80,10 +80,6 @@ set spellcapcheck=
 autocmd BufWinEnter,WinEnter *.c,*.cc,*.cpp,*.h,*.py let w:m1=matchadd('ErrorMsg', '\%>80v.\+', -1)
 autocmd BufWinLeave,WinLeave * call clearmatches()
 
-" Syntax highlighting file patterns
-autocmd BufRead,BufNewFile Dockerfile* setfiletype dockerfile
-autocmd BufRead,BufNewFile *.nomad set filetype=terraform
-
 " Turn off search highlighting
 nnoremap <silent> <Esc> :noh<return>
 
