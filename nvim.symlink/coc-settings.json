@@ -1,107 +1,133 @@
 {
-	"languageserver": {
-		"go": {
-			"command": "gopls",
-			"rootPatterns": [
-				"go.mod"
-			],
-			"filetypes": [
-				"go"
-			]
-		},
-		"terraform": {
-			"command": "terraform-ls",
-			"args": [
-				"serve"
-			],
-			"filetypes": [
-				"terraform",
-				"tf"
-			],
-			"initializationOptions": {},
-			"settings": {}
-		},
-		"ccls": {
-			"command": "ccls",
-			"filetypes": [
-				"c",
-				"cc",
-				"cpp",
-				"c++",
-				"objc",
-				"objcpp"
-			],
-			"rootPatterns": [
-				".ccls",
-				"compile_commands.json",
-				".git"
-			],
-			"initializationOptions": {
-				"cache": {
-					"directory": "/tmp/ccls"
-				}
-			}
-		}
-	},
-	"coc.source.buffer.enable": false,
-	"coc.source.around.enable": false,
-  "hover.floatConfig": {
-		"highlight": "CocFloatingHover"
-  },
-	"diagnostic.floatConfig": {
-		"highlight": "CocFloatingDiagnostic"
-	},
-	"diagnostic.checkCurrentLine": true,
-	"diagnostic.errorSign": ">>",
-	"diagnostic.infoSign": ">>",
-	"diagnostic.virtualText": false,
-	"diagnostic.warningSign": ">>",
-	"inlayHint.display": false,
-	"notification.disabledProgressSources": [
-		"*"
-	],
-	"pyright.disableDiagnostics": true,
-	"rust-analyzer.cargo.extraArgs": [
-		"--target-dir",
-		"target/.rust-analyzer"
-	],
-	// "rust-analyzer.check.command": "clippy",
-  // "rust-analyzer.trace.server": "verbose",
-	"rust-analyzer.inlayHints.maxLength": 100,
-	"sql.database": "postgresql",
-  "sql.lintOnOpen": false,
-  "sql.lintOnChange": false,
-  "sql.lintOnSave": false,
-	"suggest.autoTrigger": "none",
-	"suggest.noselect": true,
-	"suggest.timeout": 1000,
-	"workspace.ignoredFolders": [
-		"$HOME",
-		"$HOME/.cargo/**",
-		"$HOME/.rustup/**"
-	],
-	"biome.bin": "/opt/homebrew/bin/biome",
-	"biome.requireConfiguration": false,
-  "coc.preferences.formatOnSaveTimeout": 1000,
-	"[typescript]": {
-		"coc.preferences.formatOnSave": true
-	},
-	"[typescriptreact]": {
-		"coc.preferences.formatOnSave": true
-	},
-	"[terraform]": {
-		"coc.preferences.formatOnSave": true
-	},
-	"[css]": {
-		"coc.preferences.formatOnSave": true
-	},
-	"[jsonc]": {
-		"coc.preferences.formatOnSave": false
-	},
-	"[nomad]": {
-		"coc.preferences.formatOnSave": true
-	},
-	"[python]": {
-		"coc.preferences.formatOnSave": true
-	}
+    "[css]":
+    {
+        "coc.preferences.formatOnSave": true
+    },
+    "[jsonc]":
+    {
+        "coc.preferences.formatOnSave": false
+    },
+    "[nomad]":
+    {
+        "coc.preferences.formatOnSave": true
+    },
+    "[python]":
+    {
+        "coc.preferences.formatOnSave": true
+    },
+    "[terraform]":
+    {
+        "coc.preferences.formatOnSave": true
+    },
+    "[typescript]":
+    {
+        "coc.preferences.formatOnSave": true
+    },
+    "[typescriptreact]":
+    {
+        "coc.preferences.formatOnSave": true
+    },
+    "biome.bin": "/opt/homebrew/bin/biome",
+    "biome.requireConfiguration": false,
+    "coc.preferences.formatOnSaveTimeout": 1000,
+    "coc.source.around.enable": false,
+    "coc.source.buffer.enable": false,
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.errorSign": ">>",
+    "diagnostic.floatConfig":
+    {
+        "highlight": "CocFloatingDiagnostic"
+    },
+    "diagnostic.infoSign": ">>",
+    "diagnostic.virtualText": false,
+    "diagnostic.warningSign": ">>",
+    "hover.floatConfig":
+    {
+        "highlight": "CocFloatingHover"
+    },
+    "inlayHint.display": false,
+    "languageserver":
+    {
+        "ccls":
+        {
+            "command": "ccls",
+            "filetypes":
+            [
+                "c",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ],
+            "initializationOptions":
+            {
+                "cache":
+                {
+                    "directory": "/tmp/ccls"
+                }
+            },
+            "rootPatterns":
+            [
+                ".ccls",
+                "compile_commands.json",
+                ".git"
+            ]
+        },
+        "go":
+        {
+            "command": "gopls",
+            "filetypes":
+            [
+                "go"
+            ],
+            "rootPatterns":
+            [
+                "go.mod"
+            ]
+        },
+        "terraform":
+        {
+            "args":
+            [
+                "serve"
+            ],
+            "command": "terraform-ls",
+            "filetypes":
+            [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions":
+            {},
+            "settings":
+            {}
+        }
+    },
+    "notification.disabledProgressSources":
+    [
+        "*"
+    ],
+    "pyright.disableDiagnostics": true,
+    "python.formatting.provider": "none",
+    "ruff.nativeServer": true,
+    "rust-analyzer.cargo.extraArgs":
+    [
+        "--target-dir",
+        "target/.rust-analyzer"
+    ],
+    "rust-analyzer.inlayHints.maxLength": 100,
+    "sql.database": "postgresql",
+    "sql.lintOnChange": false,
+    "sql.lintOnOpen": false,
+    "sql.lintOnSave": false,
+    "suggest.autoTrigger": "none",
+    "suggest.noselect": true,
+    "suggest.timeout": 1000,
+    "workspace.ignoredFolders":
+    [
+        "$HOME",
+        "$HOME/.cargo/**",
+        "$HOME/.rustup/**"
+    ]
 }
