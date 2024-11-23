@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-css', 'coc-pyright', 'coc-go', 'coc-sql', 'coc-biome', '@yaegassy/coc-black-formatter']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-css', 'coc-pyright', 'coc-go', 'coc-sql', 'coc-biome']
 
 " Some servers have issues with backup files, see #649.
 set nobackup
@@ -77,6 +77,7 @@ nnoremap <silent> K :call ShowDocumentation()<CR>
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
+hi CocFloatingHover guibg=#414141
 hi CocFloatingDiagnostic guibg=#839496 guifg=#002b36 gui=none
 hi CocErrorFloat guifg=#002b36
 hi CocWarningFloat guifg=#002b36

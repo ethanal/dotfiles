@@ -2,5 +2,6 @@
 --glob=!.git/*
 --glob=!*.chunk.js
 --glob=!*.chunk.css
+--glob=!*.gen.ts
 --glob=!.next/*
 --smart-case

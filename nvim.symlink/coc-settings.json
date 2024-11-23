@@ -45,6 +45,9 @@
 	},
 	"coc.source.buffer.enable": false,
 	"coc.source.around.enable": false,
+  "hover.floatConfig": {
+		"highlight": "CocFloatingHover"
+  },
 	"diagnostic.floatConfig": {
 		"highlight": "CocFloatingDiagnostic"
 	},
@@ -62,9 +65,13 @@
 		"--target-dir",
 		"target/.rust-analyzer"
 	],
-	"rust-analyzer.check.command": "clippy",
+	// "rust-analyzer.check.command": "clippy",
+  // "rust-analyzer.trace.server": "verbose",
 	"rust-analyzer.inlayHints.maxLength": 100,
 	"sql.database": "postgresql",
+  "sql.lintOnOpen": false,
+  "sql.lintOnChange": false,
+  "sql.lintOnSave": false,
 	"suggest.autoTrigger": "none",
 	"suggest.noselect": true,
 	"suggest.timeout": 1000,
@@ -75,6 +82,7 @@
 	],
 	"biome.bin": "/opt/homebrew/bin/biome",
 	"biome.requireConfiguration": false,
+  "coc.preferences.formatOnSaveTimeout": 1000,
 	"[typescript]": {
 		"coc.preferences.formatOnSave": true
 	},

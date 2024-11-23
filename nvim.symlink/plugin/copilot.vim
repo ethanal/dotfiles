@@ -3,6 +3,8 @@ let g:copilot_filetypes = {
 \ 'pandoc': v:false,
 \ 'gitcommit': v:false,
 \ 'markdown': v:false,
+\ 'Avante': v:false,
+\ 'AvanteInput': v:false,
 \ }
 
 command! CE Copilot enable
