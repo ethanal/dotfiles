@@ -42,6 +42,10 @@ lua require('base16-colorscheme').setup({
      \ base0C = '#6c71c4', base0D = '#268bd2', base0E = '#859900', base0F = '#d33682'
      \})
 
+" https://github.com/neovim/neovim/issues/9019
+hi CursorLine ctermfg=white
+
+" Line numbers
 highlight clear SignColumn
 highlight clear LineNr
 highlight LineNr guifg=#657b83
