@@ -32,6 +32,7 @@
     "Green Component" : 0.21176470588235294
   },
   "Blend" : 0.050000000000000003,
+  "Show Mark Indicators" : false,
   "Mouse Reporting" : true,
   "Cursor Boost" : 0,
   "Ansi 4 Color" : {
@@ -508,12 +509,12 @@
   "Columns" : 80,
   "Unicode Normalization" : 0,
   "Visual Bell" : true,
-  "ASCII Ligatures" : false,
+  "Custom Directory" : "Recycle",
   "Ansi 5 Color" : {
     "Red Component" : 0.82745098039215681,
     "Color Space" : "sRGB",
     "Blue Component" : 0.50980392156862742,
     "Green Component" : 0.21176470588235294
   },
-  "Custom Directory" : "Recycle"
+  "ASCII Ligatures" : false
 }
