@@ -3,10 +3,11 @@
   "Working Directory" : "\/Users\/Ethan",
   "Prompt Before Closing 2" : 2,
   "Selected Text Color" : {
-    "Red Component" : 0.57647058823529407,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.63137254901960782,
-    "Green Component" : 0.63137254901960782
+    "Red Component" : 0.58431372549019611,
+    "Color Space" : "P3",
+    "Blue Component" : 0.62745098039215685,
+    "Alpha Component" : 1,
+    "Green Component" : 0.62745098039215685
   },
   "Rows" : 25,
   "Ansi 11 Color" : {
@@ -26,10 +27,11 @@
   "Show Status Bar" : false,
   "Character Encoding" : 4,
   "Selection Color" : {
-    "Red Component" : 0.027450980392156862,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.25882352941176473,
-    "Green Component" : 0.21176470588235294
+    "Red Component" : 0.36078431372549019,
+    "Color Space" : "P3",
+    "Blue Component" : 0.45490196078431372,
+    "Alpha Component" : 1,
+    "Green Component" : 0.42745098039215684
   },
   "Blend" : 0.050000000000000003,
   "Show Mark Indicators" : false,
@@ -518,6 +520,7 @@
   "Columns" : 80,
   "Unicode Normalization" : 0,
   "Visual Bell" : true,
+  "Use Selected Text Color" : false,
   "ASCII Ligatures" : false,
   "Thin Strokes" : 3,
   "Ansi 5 Color" : {
