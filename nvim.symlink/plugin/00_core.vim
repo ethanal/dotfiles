@@ -76,10 +76,6 @@ autocmd FileType gitcommit setlocal spell
 " Don't mark lower word as incorrect because they aren't capitalized.
 set spellcapcheck=
 
-" Highlight characters in lines > 80 chars.
-autocmd BufWinEnter,WinEnter *.c,*.cc,*.cpp,*.h,*.py let w:m1=matchadd('ErrorMsg', '\%>80v.\+', -1)
-autocmd BufWinLeave,WinLeave * call clearmatches()
-
 " Turn off search highlighting
 nnoremap <silent> <Esc> :noh<return>
 
