@@ -42,7 +42,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.api.nvim_set_hl(0, "@variable", { link = "Normal" })
+vim.api.nvim_set_hl(0, "@variable", {})
 -- vim.api.nvim_set_hl(0, "@comment.documentation.rust", { link = "Special" })
 -- vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "Normal" })
 -- vim.api.nvim_set_hl(0, "@punctuation.delimiter", { link = "Normal" })
