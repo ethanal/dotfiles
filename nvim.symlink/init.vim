@@ -15,7 +15,7 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'jremmen/vim-ripgrep'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-rhubarb'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
