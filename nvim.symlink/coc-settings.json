@@ -102,6 +102,12 @@
             {},
             "settings":
             {}
+        },
+        "python": {
+
+          "command": "ruff",
+          "args": ["server"],
+          "filetypes": ["python"]
         }
     },
     "notification.disabledProgressSources":
@@ -110,7 +116,6 @@
     ],
     "pyright.disableDiagnostics": true,
     "python.formatting.provider": "none",
-    "ruff.nativeServer": true,
     "rust-analyzer.cargo.extraArgs":
     [
         "--target-dir",

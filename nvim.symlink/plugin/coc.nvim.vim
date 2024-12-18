@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-css', 'coc-pyright', 'coc-go', 'coc-sql', 'coc-biome', '@yaegassy/coc-ruff']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-css', 'coc-pyright', 'coc-go', 'coc-sql', 'coc-biome']
 
 " Some servers have issues with backup files, see #649.
 set nobackup
