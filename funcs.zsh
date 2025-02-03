@@ -62,3 +62,25 @@ alias kns=kubens
 jl() {
   jq -r -R '. as $raw | try fromjson catch $raw'
 }
+
+jj-watch () {
+  watch -n 1 --color jj --color=always --ignore-working-copy
+}
+
+jj-sync() {(
+  set -euo pipefail
+  DEFAULT_BRANCH=$(jj log -r "local_trunk()" -T "local_bookmarks.filter(|b| b.name() == 'master' || b.name() == 'main' || b.name() == 'trunk')" --no-pager --no-graph --color=never)
+  set -x
+  jj git fetch -b $DEFAULT_BRANCH -b "glob:ethan/*"
+  jj bookmark set $DEFAULT_BRANCH --to "trunk()"
+)}
+
+jj-restack() {(
+  set -euxo pipefail
+  jj rebase -b "all:(mine() & local_trunk()..)" -d "trunk()" --skip-emptied
+)}
+
+jj-submit-all() {(
+  set -euxo pipefail
+  jj git push -r 'mine() & trunk().. & bookmarks("glob:ethan/*")'
+)}

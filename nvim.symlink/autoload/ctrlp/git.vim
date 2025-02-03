@@ -55,9 +55,7 @@ call add(g:ctrlp_ext_vars, {
 function! ctrlp#git#init()
 	" Return the list of recently modified or dirty files in git
 
-	let last_named_commit = system('git log --no-merges --format="%H %D" HEAD~1 | grep "^.\{40\} ." | cut -d" " -f1 | head -n1')
-
-	let recently_modified = systemlist('git diff --name-only HEAD..'.last_named_commit)
+	let recently_modified = systemlist('git diff --name-only HEAD')
 	let dirty_files = systemlist('git status --porcelain | cut -c4-')
 	let all_files = recently_modified + dirty_files
 

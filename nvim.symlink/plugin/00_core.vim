@@ -8,6 +8,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set formatoptions-=cro
 
 set ignorecase
 set smartcase  " Don't ignore case in searches when pattern contains upper case chars

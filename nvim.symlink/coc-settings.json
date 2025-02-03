@@ -118,6 +118,7 @@
     "python.formatting.provider": "none",
     "rust-analyzer.cargo.extraArgs":
     [
+        "--tests",
         "--target-dir",
         "target/.rust-analyzer"
     ],
