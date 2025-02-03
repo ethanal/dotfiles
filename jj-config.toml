@@ -1,0 +1,20 @@
+[user]
+name = "Ethan Lowman"
+email = "git@ethanlowman.com"
+
+[git]
+subprocess = true
+push-bookmark-prefix = "ethan/"
+
+[ui]
+default-command = ["log", "-r", "trunk() | local_trunk() | (mine_flexible() & local_trunk()..)"]
+diff-editor = ":builtin"
+
+[aliases]
+push = ["git", "push"]
+m = ["log", "-r", "::local_trunk()"]
+
+[revset-aliases]
+"mine_flexible()" = "mine() | author_name('Ethan Lowman')"
+"local_trunk()" = "latest(bookmarks(exact:'trunk') | bookmarks(exact:'main') | bookmarks(exact:'master'))"
+
