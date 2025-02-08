@@ -4,17 +4,39 @@ email = "git@ethanlowman.com"
 
 [git]
 subprocess = true
+sign-on-push = true
 push-bookmark-prefix = "ethan/"
 
 [ui]
-default-command = ["log", "-r", "trunk() | local_trunk() | (mine_flexible() & local_trunk()..)"]
+# default-command = ["log", "-r", "trunk() | local_trunk() | (mine_flexible() & local_trunk()..)"]
+default-command = ["log", "-r", "trunk() | local_trunk() | (mine_flexible() & local_trunk()..)", "--no-pager", "-T", '''
+separate(" ",
+  format_short_change_id_with_hidden_and_divergent_info(self),
+  separate(commit_summary_separator,
+    bookmarks.filter(|b| !b.name().starts_with("mq/")),
+    separate(" ",
+      if(conflict, label("conflict", "(conflict)")),
+      if(empty, label("empty", "(empty)")),
+      if(description,
+        description.first_line(),
+        label(if(empty, "empty"), description_placeholder),
+      ),
+    ),
+  ),
+  if(divergent, format_short_commit_id(commit_id))
+)
+''']
 diff-editor = ":builtin"
+
+[colors]
+"node working_copy" = { fg = "magenta", bold = false }
 
 [aliases]
 push = ["git", "push"]
 m = ["log", "-r", "::local_trunk()"]
+up = ["edit", "-r", "@+"]
+down = ["edit", "-r", "@-"]
 
 [revset-aliases]
 "mine_flexible()" = "mine() | author_name('Ethan Lowman')"
 "local_trunk()" = "latest(bookmarks(exact:'trunk') | bookmarks(exact:'main') | bookmarks(exact:'master'))"
-
