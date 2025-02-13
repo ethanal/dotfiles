@@ -122,3 +122,6 @@ command! CAB bufdo! bwipeout
 " Custom format on save
 autocmd BufWritePost *.pkr.hcl silent! execute '!packer fmt %' | edit!
 autocmd BufWritePost *.pkrvars.hcl silent! execute '!packer fmt %' | edit!
+
+" Paste without yank
+xnoremap p P

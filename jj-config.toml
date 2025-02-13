@@ -23,7 +23,7 @@ separate(" ",
       ),
     ),
   ),
-  if(divergent, format_short_commit_id(commit_id))
+  commit_id.short(8),
 )
 ''']
 diff-editor = ":builtin"

@@ -64,7 +64,7 @@ jl() {
 }
 
 jj-watch () {
-  watch -n 1 --color jj --color=always --ignore-working-copy
+  watch -n 1 --color --no-wrap jj --color=always --ignore-working-copy
 }
 
 jj-sync() {(
@@ -83,7 +83,13 @@ jj-restack() {(
 jj-submit-all() {(
   set -euo pipefail
 
-  for CHANGE_ID in $(jj log -r "mine() & trunk().. & bookmarks(glob:'$USER/*')" --no-pager --no-graph --color=never -T 'change_id ++ "\n"'); do
+  if [[ $# -eq 0 ]]; then
+    REVSET="all()"
+  else
+    REVSET="$1"
+  fi
+
+  for CHANGE_ID in $(jj log -r "mine() & trunk().. & bookmarks(glob:'$USER/*') & $REVSET" --no-pager --no-graph --color=never -T 'change_id ++ "\n"'); do
     echo Submitting $CHANGE_ID...
     jj-submit $CHANGE_ID
     echo
@@ -116,32 +122,30 @@ jj-submit() {(
     gh pr edit $BRANCH_NAME --base $MQ_BRANCH_NAME
   fi
 
-  PR_NUMBER=$(gh pr list --head $BRANCH_NAME --json number | jq ".[] | .number")
-
   # Build PR comment.
-  LOG=$(jj log -r "(trunk()::$CHANGE_ID | $CHANGE_ID::) & remote_bookmarks(glob:'$USER/*')" --no-pager --color=never -T "description.first_line() ++ ' REPLACE_BRANCH_NAME:' ++ remote_bookmarks.filter(|b| b.name().starts_with('$USER/') && b.remote() == 'git').map(|b| b.name())")
+  LOG=$(jj log -r "(fork_point(trunk()::$CHANGE_ID)::$CHANGE_ID | $CHANGE_ID::latest(heads($CHANGE_ID:: & bookmarks(glob:'$USER/*')))) & bookmarks(glob:'$USER/*')" --no-pager --color=never --no-graph -T "'- REPLACE_BRANCH_NAME:' ++ remote_bookmarks.filter(|b| b.name().starts_with('$USER/') && b.remote() == 'git').map(|b| b.name()) ++ \"\n\"")
   echo $LOG | grep -o 'REPLACE_BRANCH_NAME.\+' | while read -r PATTERN; do
     STK_BRANCH_NAME=$(echo $PATTERN | sed -E 's/REPLACE_BRANCH_NAME:(.*)/\1/')
-    PR_URL="<a href='$(gh pr view $STK_BRANCH_NAME --json url --template "{{ .url }}")'>#$PR_NUMBER</a>"
+    PR_NUMBER="$(gh pr view $STK_BRANCH_NAME --json number --template '{{ .number }}')"
     PATTERN_ESCAPE=$(echo $PATTERN | sed -E 's/\//\\\//g')
-    PR_URL_ESCAPE=$(echo $PR_URL | sed -E 's/\//\\\//g')
 
     SUFFIX=""
     if [[ $STK_BRANCH_NAME == $BRANCH_NAME ]]; then
       SUFFIX=" 👈"
     fi
-    LOG=$(echo $LOG | sed -E "s/$PATTERN_ESCAPE/$PR_URL_ESCAPE$SUFFIX/g")
+    LOG=$(echo $LOG | sed -E "s/$PATTERN_ESCAPE/#$PR_NUMBER$SUFFIX/g")
   done
+
+  DEFAULT_BRANCH=$(jj log -r "local_trunk()" -T "local_bookmarks.filter(|b| b.name() == 'master' || b.name() == 'main' || b.name() == 'trunk')" --no-pager --no-graph --color=never)
 
   COMMENT_FILE=$(mktemp)
   echo "### 🥞 Pull Request Stack" >> $COMMENT_FILE
-  echo '<pre>' >> $COMMENT_FILE
   echo $LOG >> $COMMENT_FILE
-  echo '</pre>' >> $COMMENT_FILE
-  # echo $LOG | sed -E 's/.+/<samp>&<\/samp>/g' >> $COMMENT_FILE
+  echo "- \`$DEFAULT_BRANCH\`" >> $COMMENT_FILE
   echo "<!-- this_is_the_jj_pr_stack_comment -->" >> $COMMENT_FILE
 
   # Create or update PR comment.
+  PR_NUMBER=$(gh pr list --head $BRANCH_NAME --json number | jq ".[] | .number")
   OWNER_REPO=$(gh repo view --json owner,name --template "{{ .owner.login }}/{{ .name }}")
   EXISTING_COMMENT=$(gh api --method GET repos/${OWNER_REPO}/issues/${PR_NUMBER}/comments | jq '.[] | select(.body | contains("this_is_the_jj_pr_stack_comment")) | .id')
   if [[ -n $EXISTING_COMMENT ]]; then
