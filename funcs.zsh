@@ -99,6 +99,11 @@ jj-submit-all() {(
 jj-submit() {(
   set -euo pipefail
 
+  if [[ $(jj bookmark list --conflicted) ]]; then
+    echo "Conflicted bookmarks detected. Resolve conflicts and try again."
+    return 1
+  fi
+
   COMMIT=$1;
   CHANGE_ID="$(jj log --template 'change_id.shortest(8)' --no-pager --no-graph --color=never -r $COMMIT)"
   BRANCH_NAME="$USER/$(jj log --template 'change_id.shortest(8)' --no-pager --no-graph --color=never -r $CHANGE_ID)"
