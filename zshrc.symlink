@@ -102,7 +102,7 @@ else
 fi
 
 export ITERM2_SQUELCH_MARK=1
-test -e "$HOME/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "$HOME/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 autoload -Uz compinit
 compinit

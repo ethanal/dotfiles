@@ -51,8 +51,6 @@ require("nvim-tree").setup({
 
 local view = require("nvim-tree.view")
 function nvim_tree_focus_or_toggle()
-	vim.cmd("BuffergatorClose")
-
 	if view.is_visible() then
 		local curwin = vim.api.nvim_get_current_win()
 		local curwinconfig = vim.api.nvim_win_get_config(curwin)

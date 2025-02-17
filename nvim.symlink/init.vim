@@ -8,9 +8,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', {'for': 'go'}
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'jremmen/vim-ripgrep'
 Plug 'ntpeters/vim-better-whitespace'
@@ -25,9 +23,12 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ojroques/nvim-oscyank'
 Plug 'github/copilot.vim'
 
-" Plug 'stevearc/dressing.nvim'
+" Dependency of telescope, avante
 Plug 'nvim-lua/plenary.nvim'
-Plug 'MunifTanjim/nui.nvim'
+
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+
+Plug 'muniftanjim/nui.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
