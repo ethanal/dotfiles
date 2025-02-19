@@ -27,6 +27,10 @@ separate(" ",
 )
 ''']
 diff-editor = ":builtin"
+pager = ["sh", "-c", "delta --side-by-side --minus-style 'syntax #500000' --plus-style 'syntax #005000' --file-transformation 's/^/> /g' -w $(tput cols) | less -F"]
+
+[ui.diff]
+format = "git"
 
 [colors]
 "node working_copy" = { fg = "magenta", bold = false }

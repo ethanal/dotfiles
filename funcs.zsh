@@ -21,6 +21,8 @@ who-listen() {
   lsof -t -i :$1
 }
 
+alias llm="uvx --with llm-anthropic llm -m claude-3.5-sonnet"
+
 # OSX only.
 if [ $(uname -s) = "Darwin" ]
 then
@@ -162,3 +164,16 @@ jj-submit() {(
   rm $COMMENT_FILE
 )}
 
+
+jj-s() {(
+  if [[ $# -eq 0 ]]; then
+    REVSET="@"
+  else
+    REVSET="$1"
+  fi
+
+  preview_cmd="jj diff --color=always -r $REVSET {1} --git | delta --side-by-side --minus-style \"syntax #500000\" --plus-style \"syntax #005000\" -w 200"
+
+  jj show $REVSET -T 'description.first_line() ++ "\n"' --name-only | \
+    fzf --ansi --tac --preview "$preview_cmd" --preview-window "right,80%" --header-lines 1 > /dev/null
+)}
