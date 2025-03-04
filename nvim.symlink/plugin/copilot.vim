@@ -5,6 +5,7 @@ let g:copilot_filetypes = {
 \ 'markdown': v:false,
 \ 'Avante': v:false,
 \ 'AvanteInput': v:false,
+\ 'jj': v:false,
 \ }
 
 command! CE Copilot enable

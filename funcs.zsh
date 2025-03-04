@@ -61,6 +61,12 @@ alias kgn="kubectl get nodes"
 alias kc=kubectx
 alias kns=kubens
 
+check() {
+  clear; tmux clear-history; cargo check --tests
+}
+
+alias j=jj
+
 jl() {
   jq -r -R '. as $raw | try fromjson catch $raw'
 }
@@ -115,10 +121,10 @@ jj-submit() {(
 
   set -x
   jj bookmark set $BRANCH_NAME -r $CHANGE_ID
-  jj bookmark set $MQ_BRANCH_NAME -r $MQ_CHANGE_ID
+  jj bookmark set $MQ_BRANCH_NAME -r $MQ_CHANGE_ID --allow-backwards
 
-  jj git push -b exact:$MQ_BRANCH_NAME --allow-new
-  jj git push -b exact:$BRANCH_NAME --allow-new
+  jj git push -b glob:"*/$CHANGE_ID" --allow-new
+
   set +x
   if [[ "$(gh pr list --head $BRANCH_NAME --json number)" == "[]" ]]; then
     echo Creating PR...

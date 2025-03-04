@@ -56,4 +56,7 @@ set-option -sg escape-time 10
 # - WARNING `focus-events` is not enabled. |'autoread'| may not work.
 set-option -g focus-events on
 
-set-option -g history-limit 1000000
+set-option -g history-limit 10000
+
+bind -n C-e send-keys -R \; clear-history \;
+

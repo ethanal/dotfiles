@@ -7,9 +7,19 @@ subprocess = true
 sign-on-push = true
 push-bookmark-prefix = "ethan/"
 
+
+[revsets]
+short-prefixes = "trunk() | local_trunk() | (mine() & local_trunk()..)::"
+
 [ui]
 # default-command = ["log", "-r", "trunk() | local_trunk() | (mine_flexible() & local_trunk()..)"]
-default-command = ["log", "-r", "trunk() | local_trunk() | (mine_flexible() & local_trunk()..)", "--no-pager", "-T", '''
+default-command = [
+    "log",
+    "-r",
+    "trunk() | local_trunk() | (mine() & local_trunk()..)::",
+    "--no-pager",
+    "-T",
+    '''
 separate(" ",
   format_short_change_id_with_hidden_and_divergent_info(self),
   separate(commit_summary_separator,
@@ -25,9 +35,14 @@ separate(" ",
   ),
   commit_id.short(8),
 )
-''']
+''',
+]
 diff-editor = ":builtin"
-pager = ["sh", "-c", "delta --side-by-side --minus-style 'syntax #500000' --plus-style 'syntax #005000' --file-transformation 's/^/> /g' -w $(tput cols) | less -F"]
+pager = [
+    "sh",
+    "-c",
+    "delta --side-by-side --minus-style 'syntax #500000' --plus-style 'syntax #005000' --file-transformation \"s|^|> $(jj root)/|g\" -w $(tput cols) | less -F",
+]
 
 [ui.diff]
 format = "git"
@@ -40,6 +55,9 @@ push = ["git", "push"]
 m = ["log", "-r", "::local_trunk()"]
 up = ["edit", "-r", "@+"]
 down = ["edit", "-r", "@-"]
+sq = ["squash"]
+rb = ["rebase"]
+cp = ["duplicate"]
 
 [revset-aliases]
 "mine_flexible()" = "mine() | author_name('Ethan Lowman')"
