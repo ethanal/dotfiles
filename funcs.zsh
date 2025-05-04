@@ -66,7 +66,7 @@ jl() {
 }
 
 jj-watch () {
-  watch -n 1 --color --no-wrap jj --color=always --ignore-working-copy
+  watch -t -n 1 --color --no-wrap jj --color=always --ignore-working-copy
 }
 
 jj-sync() {(
