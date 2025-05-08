@@ -1,5 +1,13 @@
 if command -v nvim > /dev/null; then
-  alias vim=nvim
+  function vim() {
+    if [ -e $(pwd)/.vim-server.pipe ]; then
+      echo "Vim server already running in this directory. Running without server."
+      sleep 1
+      nvim
+    else
+      nvim --listen $(pwd)/.vim-server.pipe
+    fi
+  }
 fi
 
 alias gitprune="git remote prune origin"

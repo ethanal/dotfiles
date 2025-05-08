@@ -1,7 +1,22 @@
 #!/usr/bin/env sh
 
-/opt/homebrew/bin/nvim --server ~/.cache/nvim/server.pipe --remote $1
-if [ -n "$2" ]; then
-  /opt/homebrew/bin/nvim --server ~/.cache/nvim/server.pipe --remote-send "<ESC>:$2<CR>"
-fi
+file=$(realpath $1)
+dirname=$(dirname "$file")
 
+# traverse up the directory to find the .vim-server.pipe file
+while [ ! -e "$dirname/.vim-server.pipe" ]; do
+  echo $dirname
+  if [ "$dirname" = "/" ]; then
+    open $1
+    exit 0
+  fi
+
+  dirname=$(dirname "$dirname")
+done
+
+pipe_file="$dirname/.vim-server.pipe"
+
+/opt/homebrew/bin/nvim --server $pipe_file --remote $1
+if [ -n "$2" ]; then
+  /opt/homebrew/bin/nvim --server $pipe_file --remote-send "<ESC>:$2<CR>"
+fi
