@@ -3,9 +3,9 @@ if command -v nvim > /dev/null; then
     if [ -e $(pwd)/.vim-server.pipe ]; then
       echo "Vim server already running in this directory. Running without server."
       sleep 1
-      nvim
+      nvim $@
     else
-      nvim --listen $(pwd)/.vim-server.pipe
+      nvim --listen $(pwd)/.vim-server.pipe $@
     fi
   }
 fi
@@ -70,7 +70,7 @@ alias kc=kubectx
 alias kns=kubens
 
 check() {
-  clear; tmux clear-history; cargo check --tests
+  clear; tmux clear-history; cargo check --tests $@
 }
 
 alias j=jj

@@ -49,6 +49,7 @@ format = "git"
 
 [colors]
 "node working_copy" = { fg = "magenta", bold = false }
+"prefix" = { fg = "bright magenta", bold = true }
 
 [aliases]
 push = ["git", "push"]
@@ -62,3 +63,7 @@ cp = ["duplicate"]
 [revset-aliases]
 "mine_flexible()" = "mine() | author_name('Ethan Lowman')"
 "local_trunk()" = "latest(bookmarks(exact:'trunk') | bookmarks(exact:'main') | bookmarks(exact:'master'))"
+
+[fix.tools.rustfmt]
+command = ["rustfmt", "+nightly", "--emit", "stdout"]
+patterns = ["glob:'**/*.rs'"]

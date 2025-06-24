@@ -68,7 +68,7 @@ nmap <silent> <leader>w :bd<CR>
 map q: :q
 
 " Make
-nmap <leader>m :make<CR>
+" nmap <leader>m :make<CR>
 
 " Spell check
 autocmd FileType gitcommit setlocal spell
