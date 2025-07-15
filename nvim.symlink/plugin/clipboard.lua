@@ -5,18 +5,19 @@ local function copy(lines, _)
 end
 
 local function paste()
-  local s = vim.fn.system("curl -s --unix-socket /tmp/com.ethanlowman.pbserver.sock http://-")
-  local reg = vim.fn.getreg("")
+  -- return {vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('')}
+  -- local s = vim.fn.system("curl -s --unix-socket /tmp/com.ethanlowman.pbserver.sock http://-")
+  -- local reg = vim.fn.getreg("")
 
-  if s == reg or s == nil then
-    return {vim.fn.split(reg, "\n"), vim.fn.getregtype("")}
-  end
+  -- if s == reg or s == nil then
+  --   return {vim.fn.split(reg, "\n"), vim.fn.getregtype("")}
+  -- end
 
-  local lines = vim.fn.split(s, "\n")
-  if vim.fn.len(lines) == 1 then
-    return {lines, "v"}
-  end
-  return {lines, "V"}
+  -- local lines = vim.fn.split(s, "\n")
+  -- if vim.fn.len(lines) == 1 then
+  --   return {lines, "v"}
+  -- end
+  -- return {lines, "V"}
 end
 
 local os_name = vim.loop.os_uname().sysname
@@ -29,8 +30,8 @@ if os_name == "Darwin" then
 else
   vim.g.clipboard = {
     name = "osc52",
-    copy = {["+"] = copy, ["*"] = copy},
-    paste = {["+"] = paste, ["*"] = paste},
+    copy = {["+"] = "clipcopy", ["*"] = "clipcopy"},
+    paste = {["+"] = "clippaste", ["*"] = "clippaste"},
   }
 end
 
