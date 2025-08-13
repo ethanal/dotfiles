@@ -1,4 +1,4 @@
-set laststatus=2
+set cmdheight=0
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')

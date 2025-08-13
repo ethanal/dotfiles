@@ -20,17 +20,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psliwka/vim-smoothie'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
-Plug 'ojroques/nvim-oscyank'
+" Plug 'ojroques/nvim-oscyank'
 Plug 'github/copilot.vim'
 
-" Dependency of telescope, avante
+" Dependency of telescope
 Plug 'nvim-lua/plenary.nvim'
 
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 
 Plug 'muniftanjim/nui.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
-Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 call plug#end()
 

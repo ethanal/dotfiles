@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-css', 'coc-pyright', 'coc-go', 'coc-sql', 'coc-biome']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-css', 'coc-pyright', 'coc-go', 'coc-sql', 'coc-biome', 'coc-clangd']
 
 " Some servers have issues with backup files, see #649.
 set nobackup
@@ -18,12 +18,15 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ca <Plug>(coc-codeaction-line)
 nmap <leader>cc :CocCommand<CR>
 
+" Remove gr* to avoid conflicting with gr
+nunmap gra
+nunmap gri
+nunmap grn
+nunmap grr
+
 " Symbol Navigation
 nnoremap <silent> <Leader>o :<C-u>CocList outline<cr>
 nnoremap <silent> <Leader>s :<C-u>CocList symbols<cr>
-
-" Give more space for displaying messages.
-set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.

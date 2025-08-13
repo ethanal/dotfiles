@@ -48,32 +48,6 @@
     "inlayHint.display": false,
     "languageserver":
     {
-        "ccls":
-        {
-            "command": "ccls",
-            "filetypes":
-            [
-                "c",
-                "cc",
-                "cpp",
-                "c++",
-                "objc",
-                "objcpp"
-            ],
-            "initializationOptions":
-            {
-                "cache":
-                {
-                    "directory": "/tmp/ccls"
-                }
-            },
-            "rootPatterns":
-            [
-                ".ccls",
-                "compile_commands.json",
-                ".git"
-            ]
-        },
         "go":
         {
             "command": "gopls",
@@ -108,7 +82,15 @@
           "command": "ruff",
           "args": ["server"],
           "filetypes": ["python"]
+        },
+      "nix": {
+        "command": "nil",
+        "filetypes": ["nix"],
+        "rootPatterns":  ["flake.nix"],
+        "settings": {
+          "nil.formatting.command": ["nixfmt"],
         }
+      }
     },
     "notification.disabledProgressSources":
     [

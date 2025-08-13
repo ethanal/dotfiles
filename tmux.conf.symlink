@@ -31,13 +31,17 @@ bind % split-window -h -c "#{pane_current_path}"
 bind c new-window -c "#{pane_current_path}"
 
 setw -g mouse on
-# Scroll slower.
+# # Scroll slower.
+bind -T copy-mode WheelUpPane select-pane \; send-keys -X -N 1 scroll-up
+bind -T copy-mode WheelDownPane select-pane \; send-keys -X -N 1 scroll-down
 bind -T copy-mode-vi WheelUpPane select-pane \; send-keys -X -N 1 scroll-up
 bind -T copy-mode-vi WheelDownPane select-pane \; send-keys -X -N 1 scroll-down
 # Don't exit on mouse up.
+unbind -T copy-mode MouseDragEnd1Pane
 unbind -T copy-mode-vi MouseDragEnd1Pane
 
-set -s set-clipboard on
+set -s set-clipboard external
+bind-key -T copy-mode y send -X copy-selection
 bind-key -T copy-mode-vi y send -X copy-selection
 
 # Kubernetes status line
@@ -58,5 +62,5 @@ set-option -g focus-events on
 
 set-option -g history-limit 10000
 
-bind -n C-e send-keys -R \; clear-history \;
+# bind -n C-e send-keys -R \; clear-history \;
 

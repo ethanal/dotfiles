@@ -81,7 +81,7 @@ set spellcapcheck=
 nnoremap <silent> <Esc> :noh<return>
 
 " Code folding
-setlocal foldmethod=indent
+set foldmethod=indent
 set foldlevelstart=99999
 set nofoldenable
 
@@ -122,6 +122,7 @@ command! CAB bufdo! bwipeout
 " Custom format on save
 autocmd BufWritePost *.pkr.hcl silent! execute '!packer fmt %' | edit!
 autocmd BufWritePost *.pkrvars.hcl silent! execute '!packer fmt %' | edit!
+" autocmd BufWritePost *.nix silent! execute '!nixfmt %' | edit!
 
 " Paste without yank
 xnoremap p P

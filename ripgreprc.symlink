@@ -4,4 +4,6 @@
 --glob=!*.chunk.css
 --glob=!*.gen.ts
 --glob=!.next/*
+--glob=!**/node_modules/*
+--glob=!**/output/*
 --smart-case
