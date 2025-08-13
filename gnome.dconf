@@ -1,0 +1,29 @@
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='default'
+natural-scroll=true
+speed=-0.57509157509157505
+
+[org/gnome/desktop/wm/keybindings]
+cycle-group=['<Control>grave']
+cycle-group-backward=['<Shift><Control>grave']
+switch-applications=['<Control>9']
+switch-applications-backward=['<Shift><Control>9']
+switch-group=@as []
+switch-group-backward=@as []
+switch-input-source=@as []
+switch-input-source-backward=@as []
+switch-to-workspace-left=['<Control>1']
+switch-to-workspace-right=['<Control>2']
+
+[org/gnome/mutter]
+dynamic-workspaces=true
+edge-tiling=true
+
+[org/gnome/settings-daemon/plugins/media-keys]
+screensaver=['F10']
+
+[org/gnome/shell/keybindings]
+screenshot=['<Shift><Control>3']
+screenshot-window=['<Shift><Control>5']
+show-screenshot-ui=['<Shift><Control>4']
+toggle-overview=['<Super>space']
