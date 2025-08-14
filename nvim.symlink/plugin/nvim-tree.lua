@@ -49,22 +49,17 @@ require("nvim-tree").setup({
 	}
 })
 
-local core = require("nvim-tree.core")
+local view = require("nvim-tree.view")
 function nvim_tree_focus_or_toggle()
-  local explorer = core.get_explorer()
-	if explorer and explorer.view:is_visible() then
-		local curwin = vim.api.nvim_get_current_win()
-		local curwinconfig = vim.api.nvim_win_get_config(curwin)
-		local curbuf = vim.api.nvim_win_get_buf(curwin)
-		local bufname = vim.api.nvim_buf_get_name(curbuf)
-
-		if bufname:match "NvimTree" then
-			explorer.view:close()
+	if view.is_visible() then
+    local bufname = vim.fn.bufname('%');
+		if bufname:match("NvimTree") then
+      vim.cmd("NvimTreeClose")
 		else
-      explorer.view:focus()
+      view:focus()
+      vim.cmd("NvimTreeFocus")
 		end
 	else
-		-- vim.cmd("NvimTreeFindFile")
 		vim.cmd("NvimTreeOpen")
 	end
 end

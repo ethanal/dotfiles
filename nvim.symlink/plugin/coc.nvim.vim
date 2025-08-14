@@ -19,10 +19,10 @@ nmap <leader>ca <Plug>(coc-codeaction-line)
 nmap <leader>cc :CocCommand<CR>
 
 " Remove gr* to avoid conflicting with gr
-nunmap gra
-nunmap gri
-nunmap grn
-nunmap grr
+silent! nunmap gra
+silent! nunmap gri
+silent! nunmap grn
+silent! nunmap grr
 
 " Symbol Navigation
 nnoremap <silent> <Leader>o :<C-u>CocList outline<cr>
