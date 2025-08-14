@@ -1,0 +1,8 @@
+theme = "SolarizedDark"
+clipboard-read = allow
+clipboard-write = allow
+mouse-scroll-multiplier = 0.5
+font-feature = -calt
+font-family = "MesloLGS Nerd Font Mono"
+keybind = ctrl+backspace=text:\x17
+keybind = ctrl+v=paste_from_clipboard
