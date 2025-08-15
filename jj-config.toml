@@ -15,7 +15,7 @@ short-prefixes = "(mine() & (mutable() | bookmarks())) | tracked_remote_bookmark
 default-command = [
     "log",
     "-r",
-    "trunk() |(mine() & mutable()) | (tracked_remote_bookmarks() & ~trunk())::",
+    "trunk() | (mine() & mutable()) | (tracked_remote_bookmarks() & ~::trunk())::",
     # "(trunk() | (~::trunk() & ::@ & (~mine() | mutable())) | (mine() & ~::untracked_remote_bookmarks()) & mutable()| tracked_remote_bookmarks())",
     "--no-pager",
     "-T",
