@@ -87,6 +87,7 @@ hi CocWarningFloat guifg=#002b36
 hi CocHintFloat guifg=#002b36
 hi CocInfoFloat guifg=#002b36
 hi DiagnosticHint guifg=#657b83
+hi link CocDeprecatedHighlight NONE
 
 let g:coc_disable_transparent_cursor = 1
 
