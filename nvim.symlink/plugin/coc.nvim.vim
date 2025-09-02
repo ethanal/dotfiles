@@ -23,6 +23,7 @@ silent! nunmap gra
 silent! nunmap gri
 silent! nunmap grn
 silent! nunmap grr
+silent! nunmap grt
 
 " Symbol Navigation
 nnoremap <silent> <Leader>o :<C-u>CocList outline<cr>
