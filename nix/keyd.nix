@@ -25,11 +25,13 @@
           tab = C-9
           # Spotlight-eque
           space = M-space
+          enter = A-enter
 
           [opt]
           left = C-left
           right = C-right
           backspace = C-backspace
+
 
           [control]
           left = C-1
