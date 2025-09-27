@@ -18,10 +18,10 @@ HIST_STAMPS="mm/dd/yyyy"
 plugins=(git docker aws brew history)
 
 # Path to your oh-my-zsh configuration.
-if [ -z "$ZSH" ]; then
-  ZSH=$HOME/.oh-my-zsh
-  source $ZSH/oh-my-zsh.sh
-fi
+# if [ -z "$ZSH" ]; then
+#   ZSH=$HOME/.oh-my-zsh
+#   source $ZSH/oh-my-zsh.sh
+# fi
 
 # ZSH config
 export CLICOLOR=true
@@ -93,6 +93,9 @@ if [ -e /opt/homebrew/Caskroom/google-cloud-sdk ]; then
   source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
   source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
+
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
 
 if [ -d /opt/homebrew ]; then
   complete -o nospace -C /opt/homebrew/bin/terraform nomad
