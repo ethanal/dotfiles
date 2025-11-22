@@ -1,5 +1,17 @@
 #!/usr/bin/env sh
 
+# if command -v nvim > /dev/null; then
+#   function vim() {
+#     if [ -e $(pwd)/.vim-server.pipe ]; then
+#       echo "Vim server already running in this directory. Running without server."
+#       sleep 1
+#       nvim $@
+#     else
+#       nvim --listen $(pwd)/.vim-server.pipe $@
+#     fi
+#   }
+# fi
+
 file=$(realpath $1)
 dirname=$(dirname "$file")
 

@@ -1,13 +1,17 @@
 set -U fish_greeting ""
 
-set -gx GIT_COMPLETION_CHECKOUT_NO_GUESS 1
 set -gx EDITOR (which nvim)
-set -gx PYTHONSTARTUP "$HOME/.pythonrc"
-set -gx LC_ALL en_US.UTF-8
 set -gx LANG en_US.UTF-8
 
 set -gx LESS "-R --mouse --wheel-lines=2 -i"
 set -gx AWS_PAGER ""
+
+set -gx PATH $HOME/bin $PATH
+set -gx PATH /usr/local/go/bin $PATH
+set -gx PATH $HOME/.cargo/bin $PATH
+set -gx PATH $HOME/.dotfiles/bin $PATH
+set -gx PATH /snap/bin $PATH
+set -gx PATH $HOME/.local/bin $PATH
 
 # Homebrew setup (macOS)
 if test -f /opt/homebrew/bin/brew
@@ -34,19 +38,51 @@ if test -f /opt/homebrew/bin/brew
     set -gx PATH (brew --prefix libpq)/bin $PATH
 end
 
-set -gx PATH $HOME/bin $PATH
-set -gx PATH /usr/local/go/bin $PATH
-set -gx PATH $HOME/.cargo/bin $PATH
-set -gx PATH $HOME/.dotfiles/bin $PATH
-set -gx PATH /snap/bin $PATH
-set -gx PATH $HOME/.local/bin $PATH
 
 set -gx ITERM2_SQUELCH_MARK 1
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 set -gx CLASSPATH /usr/local/lib/tla2tools.jar
 set -gx JJ_CONFIG $HOME/.dotfiles/jj-config.toml
+set -gx GIT_COMPLETION_CHECKOUT_NO_GUESS 1
 
 # source $HOME/.dotfiles/funcs.fish
 # source $HOME/.dotfiles/local.fish
 
 alias vim=nvim
+alias dockerrmdangling="docker images --filter 'dangling=true' -q | xargs docker rmi"
+alias gt='go test ./...'
+alias llm="uvx --with llm-anthropic llm -m claude-3.5-sonnet"
+
+if test (uname -s) = "Darwin"
+  alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
+  # This makes open work in tmux
+  alias open="reattach-to-user-namespace open"
+
+  alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+end
+
+function notes
+    set base $HOME/notes
+    set dirname $base/(date +'%Y/%m-%b')
+    set filename (date +'%b-%d-%Y.md')
+    mkdir -p $dirname
+    cd $base
+    vim $dirname/$filename
+end
+
+alias k=kubectl
+alias kgp="kubectl get pods"
+alias kdp="kubectl describe pod"
+alias kgn="kubectl get nodes"
+alias kc=kubectx
+alias kns=kubens
+
+function check
+    clear
+    tmux clear-history
+    cargo check --tests $argv
+end
+
+alias j=jj
+alias jjj=jj

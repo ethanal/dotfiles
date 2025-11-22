@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+set -euo pipefail
+
+base=$HOME/notes
+dirname=$base/$(date +'%Y/%m-%b')
+filename=$(date +'%b-%d-%Y.md')
+mkdir -p $dirname
+cd $base
+vim $dirname/$filename

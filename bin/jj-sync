@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+DEFAULT_BRANCH=$(jj log -r "local_trunk()" -T "local_bookmarks.filter(|b| b.name() == 'master' || b.name() == 'main' || b.name() == 'trunk')" --no-pager --no-graph --color=never)
+set -x
+jj git fetch -b $DEFAULT_BRANCH -b "glob:$USER/*"
+jj bookmark set $DEFAULT_BRANCH --to "trunk()"

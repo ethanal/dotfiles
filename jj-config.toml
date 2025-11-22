@@ -4,18 +4,19 @@
 name = "Ethan Lowman"
 email = "git@ethanlowman.com"
 
-[git]
-push-bookmark-prefix = "ethan/"
+[templates]
+git_push_bookmark = '"ethan/" ++ change_id.short()'
 
 [revsets]
-short-prefixes = "(mine() & (mutable() | bookmarks())) | tracked_remote_bookmarks()"
+short-prefixes = "(mine_flexible() & (mutable() | bookmarks())) | tracked_remote_bookmarks()"
 
 [ui]
+diff-formatter = ":git"
 # default-command = ["log", "-r", "trunk() | local_trunk() | (mine_flexible() & local_trunk()..)"]
 default-command = [
     "log",
     "-r",
-    "trunk() | (mine() & mutable()) | (tracked_remote_bookmarks() & ~::trunk())::",
+    "trunk() | (mine_flexible() & mutable()) | (tracked_remote_bookmarks() & ~::trunk())::",
     # "(trunk() | (~::trunk() & ::@ & (~mine() | mutable())) | (mine() & ~::untracked_remote_bookmarks()) & mutable()| tracked_remote_bookmarks())",
     "--no-pager",
     "-T",
@@ -45,9 +46,6 @@ pager = [
     "delta --side-by-side --minus-style 'syntax #500000' --plus-style 'syntax #005000' --file-transformation \"s|^|> $(jj root)/|g\" -w $(tput cols) | less -F",
 ]
 
-[ui.diff]
-format = "git"
-
 [colors]
 "node working_copy" = { fg = "magenta", bold = false }
 "prefix" = { fg = "bright magenta", bold = true }
@@ -60,6 +58,7 @@ sq = ["squash"]
 rb = ["rebase"]
 cp = ["duplicate"]
 ll = ["log", "-r", "::@ | @::"]
+watch = ["util", "exec", "--", "jj-watch"]
 
 [revset-aliases]
 "mine_flexible()" = "mine() | author_name('Ethan Lowman')"
@@ -68,3 +67,4 @@ ll = ["log", "-r", "::@ | @::"]
 [fix.tools.rustfmt]
 command = ["rustfmt", "+nightly", "--emit", "stdout"]
 patterns = ["glob:'**/*.rs'"]
+

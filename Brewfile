@@ -43,8 +43,6 @@ brew "watch"
 brew "wget"
 brew "withgraphite/tap/graphite"
 brew "ykman"
-brew "zsh"
-brew "zsh-completions"
 cask "google-cloud-sdk"
 
 # brew "arduino-cli"
