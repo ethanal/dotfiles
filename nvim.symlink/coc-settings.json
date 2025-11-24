@@ -19,14 +19,6 @@
     {
         "coc.preferences.formatOnSave": true
     },
-    "[typescript]":
-    {
-        "coc.preferences.formatOnSave": true
-    },
-    "[typescriptreact]":
-    {
-        "coc.preferences.formatOnSave": true
-    },
     "biome.bin": "/opt/homebrew/bin/biome",
     "biome.requireConfiguration": false,
     "coc.preferences.formatOnSaveTimeout": 1000,

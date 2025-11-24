@@ -3,6 +3,9 @@ set -g prefix C-a
 unbind C-b
 bind C-a send-prefix
 
+# Don't cycle pane layout
+unbind Space
+
 # quick pane cycling
 unbind Tab
 bind Tab select-pane -t :.+

@@ -16,7 +16,7 @@ diff-formatter = ":git"
 default-command = [
     "log",
     "-r",
-    "trunk() | (mine_flexible() & mutable()) | (tracked_remote_bookmarks() & ~::trunk())::",
+    "trunk() | (mine_flexible() & mutable() & ~(empty() & description(exact:'') & trunk()+ & ~@)) | (tracked_remote_bookmarks() & ~::trunk())::",
     # "(trunk() | (~::trunk() & ::@ & (~mine() | mutable())) | (mine() & ~::untracked_remote_bookmarks()) & mutable()| tracked_remote_bookmarks())",
     "--no-pager",
     "-T",
@@ -51,7 +51,6 @@ pager = [
 "prefix" = { fg = "bright magenta", bold = true }
 
 [aliases]
-push = ["git", "push"]
 up = ["edit", "-r", "@+"]
 down = ["edit", "-r", "@-"]
 sq = ["squash"]
@@ -59,10 +58,15 @@ rb = ["rebase"]
 cp = ["duplicate"]
 ll = ["log", "-r", "::@ | @::"]
 watch = ["util", "exec", "--", "jj-watch"]
+tug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & ~trunk()", "--to", "closest_pushable(@)"]
+mug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & trunk()", "--to", "closest_pushable(@)"]
+push = ["git", "push", "-r", "closest_pushable(@) & (@ | @-)"]
+fetch = ["git", "fetch"]
 
 [revset-aliases]
 "mine_flexible()" = "mine() | author_name('Ethan Lowman')"
-# "local_trunk()" = "latest(bookmarks(exact:'trunk') | bookmarks(exact:'main') | bookmarks(exact:'master')) | bookmarks(exact:'default')"
+"local_trunk()" = "latest(bookmarks(exact:'trunk') | bookmarks(exact:'main') | bookmarks(exact:'master')) | bookmarks(exact:'default')"
+"closest_pushable(to)" = "heads(::to & mutable() & ~description(exact:'') & (~empty() | merges()))"
 
 [fix.tools.rustfmt]
 command = ["rustfmt", "+nightly", "--emit", "stdout"]
