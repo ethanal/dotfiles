@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-
-watch -t -n 1 --color --no-wrap jj --color=always --ignore-working-copy
