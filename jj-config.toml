@@ -11,6 +11,7 @@ git_push_bookmark = '"ethan/" ++ change_id.short()'
 short-prefixes = "(mine_flexible() & (mutable() | bookmarks())) | tracked_remote_bookmarks()"
 
 [ui]
+diff.format = "git"
 diff-formatter = ":git"
 # default-command = ["log", "-r", "trunk() | local_trunk() | (mine_flexible() & local_trunk()..)"]
 default-command = [

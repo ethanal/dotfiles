@@ -42,7 +42,6 @@ end
 set -gx ITERM2_SQUELCH_MARK 1
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 set -gx CLASSPATH /usr/local/lib/tla2tools.jar
-set -gx JJ_CONFIG $HOME/.dotfiles/jj-config.toml
 set -gx GIT_COMPLETION_CHECKOUT_NO_GUESS 1
 
 # source $HOME/.dotfiles/funcs.fish
