@@ -16,8 +16,9 @@ diff-formatter = ":git"
 default-command = [
     "log",
     "-r",
-    "trunk() | (tracked_remote_bookmarks() & ~::trunk()):: | (mutable() & mine_flexible())::",
+    # "trunk() | (mine_flexible() & mutable() & ~(empty() & description(exact:'') & trunk()+ & ~@)) | (tracked_remote_bookmarks() & ~::trunk())::",
     # "(trunk() | (~::trunk() & ::@ & (~mine() | mutable())) | (mine() & ~::untracked_remote_bookmarks()) & mutable()| tracked_remote_bookmarks())",
+    "trunk() | (tracked_remote_bookmarks() & ~::trunk()):: | (mutable() & mine_flexible())::",
     "--no-pager",
     "-T",
     '''
@@ -57,7 +58,7 @@ sq = ["squash"]
 rb = ["rebase"]
 cp = ["duplicate"]
 ll = ["log", "-r", "::@ | @::"]
-watch = ["util", "exec", "--", "sh", "-c", "viddy -t -n 1 jj --color=always --ignore-working-copy"]
+watch = ["util", "exec", "--", "viddy -t -n 1 jj --color=always --ignore-working-copy"]
 tug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & ~trunk()", "--to", "closest_pushable(@)"]
 mug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & trunk()", "--to", "closest_pushable(@)"]
 push = ["git", "push", "-r", "closest_pushable(@) & (@ | @-)"]

@@ -1,4 +1,4 @@
-vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
+vim.opt.clipboard = { 'unnamedplus' }
 
 local os_name = vim.loop.os_uname().sysname
 if os_name == "Darwin" then
