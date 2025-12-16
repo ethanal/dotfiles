@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+pgrep -x $1 -a | fzf | cut -d' ' -f1
