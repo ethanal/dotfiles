@@ -95,9 +95,8 @@
     "rust-analyzer.cargo.extraArgs":
     [
         "--tests",
-        "--target-dir",
-        "target/.rust-analyzer"
     ],
+    "rust-analyzer.cargo.targetDir": true,
     "rust-analyzer.inlayHints.maxLength": 100,
     "sql.database": "postgresql",
     "sql.lintOnChange": false,

@@ -4,6 +4,10 @@
 name = "Ethan Lowman"
 email = "git@ethanlowman.com"
 
+[git]
+private-commits = "description('dnl:*') | description('DNL:*')"
+
+
 [templates]
 git_push_bookmark = '"ethan/" ++ change_id.short()'
 # git_push_bookmark = '"ethan/" ++ description.first_line().lower().replace(regex:"[^a-z0-9 ]", "").trim().replace(regex:" +", "-") ++ "-" ++ change_id.short()'
@@ -19,16 +23,17 @@ default-command = [
     "log",
     "-r",
     # "trunk() | (mine_flexible() & mutable() & ~(empty() & description(exact:'') & trunk()+ & ~@)) | (tracked_remote_bookmarks() & ~::trunk())::",
-    # "(trunk() | (~::trunk() & ::@ & (~mine() | mutable())) | (mine() & ~::untracked_remote_bookmarks()) & mutable()| tracked_remote_bookmarks())",
     "trunk() | (tracked_remote_bookmarks() & ~::trunk()):: | (mutable() & mine_flexible())::",
+    # "(trunk() | (~::trunk() & ::@ & (~mine() | mutable())) | (mine() & ~::untracked_remote_bookmarks()) & mutable()| tracked_remote_bookmarks())",
     "--no-pager",
     "-T",
     '''
 separate(" ",
   format_short_change_id_with_change_offset(self),
   separate(commit_summary_separator,
-    bookmarks.filter(|b| !b.name().starts_with("mq/")),
+    bookmarks,
     if(!self.mine(), self.author().name()),
+    if(!self.current_working_copy(), self.working_copies()),
     separate(" ",
       if(conflict, label("conflict", "(conflict)")),
       if(empty, label("empty", "(empty)")),
@@ -60,11 +65,12 @@ sq = ["squash"]
 rb = ["rebase"]
 cp = ["duplicate"]
 ll = ["log", "-r", "::@ | @::"]
-watch = ["util", "exec", "--", "viddy", "-t", "-n", "1", "jj", "--color=always", "--ignore-working-copy"]
 tug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & ~trunk()", "--to", "closest_pushable(@)"]
 mug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & trunk()", "--to", "closest_pushable(@)"]
-push = ["git", "push", "-r", "closest_pushable(@) & (@ | @-)"]
+watch = ["util", "exec", "--", "sh", "-c", "viddy -t -n 1 jj --color=always --ignore-working-copy"]
+push = ["git", "push"]
 fetch = ["git", "fetch"]
+pr = ["util", "exec", "--", "bash", "-c", "gh pr view --web $(jj log -T 'local_bookmarks' --no-graph -r 'heads(bookmarks() & ::@)')"]
 
 stacks = ["util", "exec", "--", "jj-pancake", "stacks"]
 sync = ["util", "exec", "--", "jj-pancake", "sync"]
@@ -73,9 +79,11 @@ restack = ["util", "exec", "--", "jj-pancake", "restack"]
 # watch = ["stack", "--tui"]
 
 [revset-aliases]
-"mine_flexible()" = "mine() | author_name(exact:'Ethan Lowman')"
+"mine_flexible()" = "mine() | author_name('Ethan Lowman')"
 "local_trunk()" = "latest(bookmarks(exact:'trunk') | bookmarks(exact:'main') | bookmarks(exact:'master')) | bookmarks(exact:'default')"
 "closest_pushable(to)" = "heads(::to & mutable() & ~description(exact:'') & (~empty() | merges()))"
+"m()" = "first_ancestors(trunk())"
+"fa(r)" = "first_ancestors(r)"
 
 [fix.tools.rustfmt]
 command = ["rustfmt", "+nightly", "--emit", "stdout"]
