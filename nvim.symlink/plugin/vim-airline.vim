@@ -1,8 +1,14 @@
+set cmdheight=0
+
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+" https://github.com/neovim/neovim/issues/1858
+let g:airline_symbols.whitespace = 'SP'
+
 let g:airline_symbols.linenr = ' L'
 let g:airline_symbols.colnr = ' C'
 let g:airline_symbols.maxlinenr = ''
