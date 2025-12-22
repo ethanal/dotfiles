@@ -65,7 +65,7 @@ push = ["git", "push", "-r", "closest_pushable(@) & (@ | @-)"]
 fetch = ["git", "fetch"]
 
 [revset-aliases]
-"mine_flexible()" = "mine() | author_name('Ethan Lowman')"
+"mine_flexible()" = "mine() | author_name(exact:'Ethan Lowman')"
 "local_trunk()" = "latest(bookmarks(exact:'trunk') | bookmarks(exact:'main') | bookmarks(exact:'master')) | bookmarks(exact:'default')"
 "closest_pushable(to)" = "heads(::to & mutable() & ~description(exact:'') & (~empty() | merges()))"
 
