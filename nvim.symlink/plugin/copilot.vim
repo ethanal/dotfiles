@@ -8,5 +8,7 @@ let g:copilot_filetypes = {
 
 command! CE Copilot enable
 command! CD Copilot disable
+
+autocmd VimEnter * Copilot disable
 imap <C-Y> <Plug>(copilot-suggest)
 imap <C-L> <Plug>(copilot-accept-word)
