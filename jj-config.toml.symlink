@@ -23,7 +23,7 @@ default-command = [
     "-T",
     '''
 separate(" ",
-  format_short_change_id_with_hidden_and_divergent_info(self),
+  format_short_change_id_with_change_offset(self),
   separate(commit_summary_separator,
     bookmarks.filter(|b| !b.name().starts_with("mq/")),
     if(!self.mine(), self.author().name()),
@@ -58,11 +58,16 @@ sq = ["squash"]
 rb = ["rebase"]
 cp = ["duplicate"]
 ll = ["log", "-r", "::@ | @::"]
-watch = ["util", "exec", "--", "viddy -t -n 1 jj --color=always --ignore-working-copy"]
+watch = ["util", "exec", "--", "viddy", "-t", "-n", "1", "jj", "--color=always", "--ignore-working-copy"]
 tug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & ~trunk()", "--to", "closest_pushable(@)"]
 mug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & trunk()", "--to", "closest_pushable(@)"]
 push = ["git", "push", "-r", "closest_pushable(@) & (@ | @-)"]
 fetch = ["git", "fetch"]
+stack = ["util", "exec", "--", "jj-pancake", "stack"]
+# watch = ["stack", "--watch"]
+sync = ["util", "exec", "--", "jj-pancake", "sync"]
+submit = ["util", "exec", "--", "jj-pancake", "submit"]
+restack = ["util", "exec", "--", "jj-pancake", "restack"]
 
 [revset-aliases]
 "mine_flexible()" = "mine() | author_name(exact:'Ethan Lowman')"
