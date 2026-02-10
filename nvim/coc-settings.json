@@ -90,6 +90,8 @@
     ],
     "pyright.disableDiagnostics": true,
     "python.formatting.provider": "none",
+    "rust-analyzer.server.path": "rust-analyzer",
+    "rust-analyzer.updates.prompt": false,
     "rust-analyzer.cargo.extraArgs":
     [
         "--tests",

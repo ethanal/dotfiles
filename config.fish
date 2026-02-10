@@ -50,7 +50,6 @@ set -gx GIT_COMPLETION_CHECKOUT_NO_GUESS 1
 alias vim=nvim
 alias dockerrmdangling="docker images --filter 'dangling=true' -q | xargs docker rmi"
 alias gt='go test ./...'
-alias llm="uvx --with llm-anthropic llm -m claude-3.5-sonnet"
 
 if test (uname -s) = "Darwin"
   alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"

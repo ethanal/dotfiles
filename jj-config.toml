@@ -6,11 +6,13 @@ email = "git@ethanlowman.com"
 
 [templates]
 git_push_bookmark = '"ethan/" ++ change_id.short()'
+# git_push_bookmark = '"ethan/" ++ description.first_line().lower().replace(regex:"[^a-z0-9 ]", "").trim().replace(regex:" +", "-") ++ "-" ++ change_id.short()'
 
 [revsets]
 short-prefixes = "(mine_flexible() & (mutable() | bookmarks())) | tracked_remote_bookmarks()"
 
 [ui]
+revsets-use-glob-by-default = true
 diff-formatter = ":git"
 # default-command = ["log", "-r", "trunk() | local_trunk() | (mine_flexible() & local_trunk()..)"]
 default-command = [
@@ -36,7 +38,7 @@ separate(" ",
       ),
     ),
   ),
-  commit_id.short(8),
+  format_short_commit_id(commit_id),
 )
 ''',
 ]
@@ -63,11 +65,12 @@ tug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & ~trunk()", "--t
 mug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & trunk()", "--to", "closest_pushable(@)"]
 push = ["git", "push", "-r", "closest_pushable(@) & (@ | @-)"]
 fetch = ["git", "fetch"]
-stack = ["util", "exec", "--", "jj-pancake", "stack"]
-# watch = ["stack", "--watch"]
+
+stacks = ["util", "exec", "--", "jj-pancake", "stacks"]
 sync = ["util", "exec", "--", "jj-pancake", "sync"]
 submit = ["util", "exec", "--", "jj-pancake", "submit"]
 restack = ["util", "exec", "--", "jj-pancake", "restack"]
+# watch = ["stack", "--tui"]
 
 [revset-aliases]
 "mine_flexible()" = "mine() | author_name(exact:'Ethan Lowman')"
