@@ -8,3 +8,5 @@
     - `jj log`
     - `jj status`
 
+# Rust code
+- Using `unwrap()` is fine in tests. We don't need an error message for everything.
