@@ -11,5 +11,9 @@
     - `jj log`
     - `jj status`
 
+# Unit tests
+- When writing unit tests, favor table-based testing rather than many tests with similar structure.
+
 # Rust code
 - Using `unwrap()` is fine in tests. We don't need an error message for everything.
+- Where convenient, use the test-case crate for table-based testing.

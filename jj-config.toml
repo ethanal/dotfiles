@@ -31,7 +31,7 @@ default-command = [
 separate(" ",
   format_short_change_id_with_change_offset(self),
   separate(commit_summary_separator,
-    bookmarks,
+    bookmarks.filter(|b| !b.name().ends_with("-git-worktree")),
     if(!self.mine(), self.author().name()),
     if(!self.current_working_copy(), self.working_copies()),
     separate(" ",
@@ -70,7 +70,10 @@ mug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & trunk()", "--to
 watch = ["util", "exec", "--", "sh", "-c", "viddy -t -n 1 jj --color=always --ignore-working-copy"]
 push = ["git", "push"]
 fetch = ["git", "fetch"]
-pr = ["util", "exec", "--", "bash", "-c", "gh pr view --web $(jj log -T 'local_bookmarks' --no-graph -r 'heads(bookmarks() & ::@)')"]
+pr = ["util", "exec", "--", "bash", "-c", "GH_PAGER='' gh pr view --json title,url --template '{{ .title }}, {{ .url }}' $(jj log -T 'local_bookmarks' --no-graph -r 'heads(bookmarks() & ::@)'); echo"]
+
+
+
 
 stacks = ["util", "exec", "--", "jj-pancake", "stacks"]
 sync = ["util", "exec", "--", "jj-pancake", "sync"]

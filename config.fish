@@ -1,5 +1,7 @@
 set -U fish_greeting ""
 
+bind ctrl-w backward-kill-word
+
 set -gx EDITOR (which nvim)
 set -gx LANG en_US.UTF-8
 

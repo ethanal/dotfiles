@@ -76,11 +76,11 @@
           "filetypes": ["python"]
         },
       "nix": {
-        "command": "nil",
+        "command": "tix",
+        "args": ["lsp", "--mem-limit", "4096"],
         "filetypes": ["nix"],
-        "rootPatterns":  ["flake.nix"],
         "settings": {
-          "nil.formatting.command": ["nixfmt"],
+          "tix.formatting.command": ["nixfmt"],
         }
       }
     },

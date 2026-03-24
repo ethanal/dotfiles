@@ -4,7 +4,7 @@ clipboard-write = allow
 mouse-scroll-multiplier = 0.5
 font-feature = -calt
 font-family = "MesloLGS Nerd Font Mono"
+# Need this for tmux
 keybind = ctrl+backspace=text:\x17
-keybind = ctrl+v=paste_from_clipboard
 command = fish
 keybind = shift+enter=text:\\\n\r

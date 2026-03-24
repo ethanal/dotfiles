@@ -1,3 +1,4 @@
+--follow
 --hidden
 --glob=!.git/*
 --glob=!*.chunk.js
