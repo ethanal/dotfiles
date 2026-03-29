@@ -12,6 +12,7 @@ ln -sf $PWD/jj-config.toml $HOME/.config/jj/config.toml
 
 mkdir -p $HOME/.claude
 ln -sf $PWD/AGENTS.md $HOME/.claude/CLAUDE.md
+ln -sf $PWD/AGENTS.md $HOME/.config/AGENTS.md
 
 ln -sf $PWD/tmux.conf $HOME/.tmux.conf
 ln -sf $PWD/ripgreprc $HOME/.ripgreprc

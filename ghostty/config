@@ -7,3 +7,4 @@ font-family = "MesloLGS Nerd Font Mono"
 keybind = ctrl+backspace=text:\x17
 keybind = ctrl+v=paste_from_clipboard
 command = fish
+keybind = shift+enter=text:\\\n\r
