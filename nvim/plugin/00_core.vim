@@ -128,3 +128,7 @@ au BufNewFile,BufRead *.nb2 set filetype=javascript
 
 " Paste without yank
 xnoremap p P
+
+" Fix shift enter from ghostty remap
+noremap <M-CR> <CR>
+noremap! <M-CR> <CR>
