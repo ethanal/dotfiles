@@ -1,4 +1,6 @@
 keybinds {
+    unbind "Ctrl o" // Vim
+
     tmux {
         bind "Ctrl a" { Write 1; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
@@ -29,36 +31,48 @@ keybinds {
         bind "9" { GoToTab 10; SwitchToMode "Normal"; }
     }
 
+    session {
+      unbind "q" // Make it hard to quit
+    }
+
     shared_except "locked" {
+        bind "Ctrl s" { SwitchToMode "Session"; }
+
         bind "Ctrl h" {
             MessagePlugin "vim-zellij-navigator" {
                 name "move_focus";
                 payload "left";
             };
+            SwitchToMode "Normal";
         }
         bind "Ctrl j" {
             MessagePlugin "vim-zellij-navigator" {
                 name "move_focus";
                 payload "down";
             };
+            SwitchToMode "Normal";
         }
         bind "Ctrl k" {
             MessagePlugin "vim-zellij-navigator" {
                 name "move_focus";
                 payload "up";
             };
+            SwitchToMode "Normal";
         }
         bind "Ctrl l" {
             MessagePlugin "vim-zellij-navigator" {
                 name "move_focus";
                 payload "right";
             };
+            SwitchToMode "Normal";
         }
     }
 
     shared_except "tmux" "locked" {
         bind "Ctrl a" { SwitchToMode "Tmux"; }
         bind "Ctrl m" { SwitchToMode "Move"; }
+        bind "Ctrl f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "Ctrl b" { TogglePaneFrames; SwitchToMode "Normal"; }
     }
 }
 
