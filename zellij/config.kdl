@@ -58,6 +58,7 @@ keybinds {
 
     shared_except "tmux" "locked" {
         bind "Ctrl a" { SwitchToMode "Tmux"; }
+        bind "Ctrl m" { SwitchToMode "Move"; }
     }
 }
 
@@ -70,3 +71,4 @@ default_shell "fish"
 pane_frames false
 theme "solarized-dark"
 show_startup_tips false
+stacked_resize false
