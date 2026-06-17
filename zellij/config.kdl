@@ -1,0 +1,72 @@
+keybinds {
+    tmux {
+        bind "Ctrl a" { Write 1; SwitchToMode "Normal"; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "[" { SwitchToMode "Scroll"; }
+        bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "<" { MoveTab "Left"; SwitchToMode "Normal"; }
+        bind ">" { MoveTab "Right"; SwitchToMode "Normal"; }
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "c" { NewTab; SwitchToMode "Normal"; }
+        bind "," { SwitchToMode "RenameTab"; }
+        bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
+        bind "n" { GoToNextTab; SwitchToMode "Normal"; }
+        bind "d" { Detach; }
+        bind "Left" { Resize "Left"; }
+        bind "Right" { Resize "Right"; }
+        bind "Down" { Resize "Down"; }
+        bind "Up" { Resize "Up"; }
+
+        bind "0" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "1" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "2" { GoToTab 3; SwitchToMode "Normal"; }
+        bind "3" { GoToTab 4; SwitchToMode "Normal"; }
+        bind "4" { GoToTab 5; SwitchToMode "Normal"; }
+        bind "5" { GoToTab 6; SwitchToMode "Normal"; }
+        bind "6" { GoToTab 7; SwitchToMode "Normal"; }
+        bind "7" { GoToTab 8; SwitchToMode "Normal"; }
+        bind "8" { GoToTab 9; SwitchToMode "Normal"; }
+        bind "9" { GoToTab 10; SwitchToMode "Normal"; }
+    }
+
+    shared_except "locked" {
+        bind "Ctrl h" {
+            MessagePlugin "vim-zellij-navigator" {
+                name "move_focus";
+                payload "left";
+            };
+        }
+        bind "Ctrl j" {
+            MessagePlugin "vim-zellij-navigator" {
+                name "move_focus";
+                payload "down";
+            };
+        }
+        bind "Ctrl k" {
+            MessagePlugin "vim-zellij-navigator" {
+                name "move_focus";
+                payload "up";
+            };
+        }
+        bind "Ctrl l" {
+            MessagePlugin "vim-zellij-navigator" {
+                name "move_focus";
+                payload "right";
+            };
+        }
+    }
+
+    shared_except "tmux" "locked" {
+        bind "Ctrl a" { SwitchToMode "Tmux"; }
+    }
+}
+
+plugins {
+  zjstatus location="file:~/.config/zellij/plugins/zjstatus.wasm"
+  vim-zellij-navigator location="file:~/.config/zellij/plugins/vim-zellij-navigator.wasm"
+}
+
+default_shell "fish"
+pane_frames false
+theme "solarized-dark"
+show_startup_tips false

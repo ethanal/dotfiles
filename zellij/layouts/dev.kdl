@@ -1,0 +1,45 @@
+layout {
+    tab name="dev" {
+      pane stacked=true {
+          pane name="hunk" command="fish" {
+            args "-c" "hunk diff --watch @; exec fish"
+          }
+          pane name="vim" command="fish" expanded=true focus=true {
+            args "-c" "vim; exec fish"
+          }
+      }
+        pane split_direction="vertical" size="30%" {
+            pane
+            pane command="jj" size="30%" {
+                args "watch"
+            }
+        }
+
+        pane size=1 borderless=true {
+          plugin location="zjstatus" {
+              format_left  "#[fg=0,bg=2] {tabs}"
+              format_right "#[fg=0,bg=2]{mode} {datetime}"
+              format_space "#[bg=2]"
+
+              tab_normal   "{index}:{name}  "
+              tab_active   "{index}:{name}* "
+              tab_zero_based_index "true"
+
+
+              datetime          " {format} "
+              datetime_format   "%H:%M %d-%b-%y UTC"
+              datetime_timezone "Etc/UTC"
+
+              mode_normal        "{name}"
+              mode_locked        "{name}"
+              mode_resize        "{name}"
+              mode_pane          "{name}"
+              mode_tab           "{name}"
+              mode_scroll        "{name}"
+              mode_session       "{name}"
+              mode_move          "{name}"
+              mode_default_to_mode "Normal"
+          }
+        }
+      }
+}
