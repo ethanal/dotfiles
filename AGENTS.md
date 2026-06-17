@@ -1,3 +1,6 @@
+# Error handling
+- In scripts intended for human consumptions, don't worry about elegant error handling by default. Just panic or let the original exception throw without attempting to make a nice error message.
+
 # Comments
 - Be sparing with comments. Don't add comments to obvious code. Only add comments when extra context is required for a human to understand a piece of code.
 

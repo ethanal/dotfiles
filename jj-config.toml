@@ -72,8 +72,7 @@ push = ["git", "push"]
 fetch = ["git", "fetch"]
 pr = ["util", "exec", "--", "bash", "-c", "GH_PAGER='' gh pr view --json title,url --template '{{ .title }}, {{ .url }}' $(jj log -T 'local_bookmarks' --no-graph -r 'heads(bookmarks() & ::@)'); echo"]
 
-
-
+credit = ["file", "annotate"]
 
 stacks = ["util", "exec", "--", "jj-pancake", "stacks"]
 sync = ["util", "exec", "--", "jj-pancake", "sync"]

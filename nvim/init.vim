@@ -7,7 +7,7 @@ Plug 'LunarWatcher/auto-pairs'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'nvim-tree/nvim-tree.lua'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'mrjones2014/smart-splits.nvim'
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'jremmen/vim-ripgrep'
