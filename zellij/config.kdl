@@ -1,5 +1,11 @@
 keybinds {
-    unbind "Ctrl o" // Vim
+    // Vim conflicts
+    shared_except "session" "locked" {
+      unbind "Ctrl o"
+    }
+    shared_except "resize" "locked" {
+      unbind "Ctrl n"
+    }
 
     tmux {
         bind "Ctrl a" { Write 1; SwitchToMode "Normal"; }
