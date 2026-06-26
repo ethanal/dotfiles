@@ -5,7 +5,7 @@ layout {
             args "-c" "hunk diff --watch @; exec fish"
           }
           pane name="vim" command="fish" expanded=true focus=true {
-            args "-c" "direnv exec . vim; exec fish"
+            args "-c" "direnv exec . nvim; exec fish"
           }
       }
         pane split_direction="vertical" size="30%" {

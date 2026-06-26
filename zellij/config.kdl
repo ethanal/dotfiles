@@ -38,10 +38,12 @@ keybinds {
     }
 
     session {
-      unbind "q" // Make it hard to quit
+      unbind "Ctrl q" // Make it hard to quit
     }
 
     shared_except "locked" {
+        bind "Ctrl q" { SwitchToMode "Session"; }
+
         bind "Ctrl s" { SwitchToMode "Session"; }
 
         bind "Ctrl h" {
