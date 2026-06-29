@@ -76,11 +76,11 @@
           "filetypes": ["python"]
         },
       "nix": {
-        "command": "tix",
+        "command": "nil",
         "args": ["lsp", "--mem-limit", "4096"],
         "filetypes": ["nix"],
         "settings": {
-          "tix.formatting.command": ["nixfmt"],
+          "nil.formatting.command": ["nixfmt"],
         }
       }
     },
