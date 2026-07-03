@@ -77,7 +77,7 @@
         },
       "nix": {
         "command": "nil",
-        "args": ["lsp", "--mem-limit", "4096"],
+        "args": [],
         "filetypes": ["nix"],
         "settings": {
           "nil.formatting.command": ["nixfmt"],
