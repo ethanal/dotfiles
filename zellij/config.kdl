@@ -41,10 +41,15 @@ keybinds {
       unbind "Ctrl q" // Make it hard to quit
     }
 
-    shared_except "locked" {
-        bind "Ctrl q" { SwitchToMode "Session"; }
+    scroll {
+      bind "Home" { ScrollToTop; }
+      bind "End" { ScrollToBottom; }
+    }
 
-        bind "Ctrl s" { SwitchToMode "Session"; }
+    shared_except "locked" {
+        bind "Ctrl q" { SwitchToMode "Normal"; }
+
+        bind "Ctrl s" { SwitchToMode "Scroll"; }
 
         bind "Ctrl h" {
             MessagePlugin "vim-zellij-navigator" {

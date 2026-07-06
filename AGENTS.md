@@ -2,7 +2,7 @@
 - In scripts intended for human consumptions, don't worry about elegant error handling by default. Just panic or let the original exception throw without attempting to make a nice error message.
 
 # Comments
-- Be sparing with comments. Don't add comments to obvious code. Only add comments when extra context is required for a human to understand a piece of code.
+- Do not leave code comments unless I specifically ask for them.
 
 # Version Control
 - Use Jujutsu for all version control operations.
@@ -18,3 +18,4 @@
 # Rust code
 - Using `unwrap()` is fine in tests. We don't need an error message for everything.
 - Where convenient, use the test-case crate for table-based testing.
+- Never attempt to manually modify a `Cargo.lock` file. If your sandbox prohibits tools that update `Cargo.lock`, defer to the user to make the update outside the sandbox.
