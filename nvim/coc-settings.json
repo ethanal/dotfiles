@@ -1,4 +1,8 @@
 {
+    "[rust]":
+    {
+        "coc.preferences.formatOnSave": true
+    },
     "[css]":
     {
         "coc.preferences.formatOnSave": true
@@ -75,14 +79,13 @@
           "args": ["server"],
           "filetypes": ["python"]
         },
-      "nix": {
-        "command": "nil",
-        "args": [],
-        "filetypes": ["nix"],
-        "settings": {
-          "nil.formatting.command": ["nixfmt"],
+        "nix": {
+          "command": "nil",
+          "filetypes": ["nix"],
+          "settings": {
+            "nil.formatting.command": ["nixfmt"],
+           }
         }
-      }
     },
     "notification.disabledProgressSources":
     [
