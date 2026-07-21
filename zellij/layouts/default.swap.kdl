@@ -1,0 +1,20 @@
+swap_floating_layout name="spread" {
+    floating_panes max_panes=1 {
+        pane { x "1%"; y "25%"; width "45%"; }
+    }
+    floating_panes max_panes=2 {
+        pane { x "1%"; y "25%"; width "45%"; }
+        pane { x "50%"; y "25%"; width "45%"; }
+    }
+    floating_panes max_panes=3 {
+        pane { y "55%"; width "45%"; height "45%"; }
+        pane { x "1%"; y "1%"; width "45%"; }
+        pane { x "50%"; y "1%"; width "45%"; }
+    }
+    floating_panes max_panes=4 {
+        pane { x "1%"; y "55%"; width "45%"; height "45%"; }
+        pane { x "50%"; y "55%"; width "45%"; height "45%"; }
+        pane { x "1%"; y "1%"; width "45%"; height "45%"; }
+        pane { x "50%"; y "1%"; width "45%"; height "45%"; }
+    }
+}
