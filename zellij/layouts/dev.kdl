@@ -2,7 +2,7 @@ layout {
     tab name="dev" {
       pane stacked=true {
           pane name="hunk" command="fish" {
-            args "-c" "hunk diff --watch @; exec fish"
+            args "-c" "hunk diff --watch; exec fish"
           }
           pane name="vim" command="fish" expanded=true focus=true {
             args "-c" "direnv exec . nvim; exec fish"

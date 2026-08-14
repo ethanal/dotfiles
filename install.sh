@@ -18,6 +18,7 @@ ln -sf $PWD/tmux.conf $HOME/.tmux.conf
 ln -sf $PWD/ripgreprc $HOME/.ripgreprc
 ln -sfT $PWD/nvim $HOME/.config/nvim
 ln -sfT $PWD/ghostty $HOME/.config/ghostty
+ln -sfT $PWD/hunk $HOME/.config/hunk
 
 fetch_with_hash() {
   url="$1"

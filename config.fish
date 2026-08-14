@@ -10,6 +10,7 @@ set -gx AWS_PAGER ""
 
 set -gx PATH $HOME/bin $PATH
 set -gx PATH /usr/local/go/bin $PATH
+set -gx PATH $HOME/go/bin $PATH
 set -gx PATH $HOME/.cargo/bin $PATH
 set -gx PATH $HOME/.dotfiles/bin $PATH
 set -gx PATH /snap/bin $PATH
