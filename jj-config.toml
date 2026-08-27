@@ -23,7 +23,7 @@ default-command = [
     "log",
     "-r",
     # "trunk() | (mine_flexible() & mutable() & ~(empty() & description(exact:'') & trunk()+ & ~@)) | (tracked_remote_bookmarks() & ~::trunk())::",
-    "trunk() | (tracked_remote_bookmarks() & ~::trunk()):: | (mutable() & mine_flexible())::",
+    "trunk() | ((tracked_remote_bookmarks() & ~::trunk()):: & ~remote_bookmarks(glob:gh-readonly-queue/*))| (mutable() & mine_flexible())::",
     # "(trunk() | (~::trunk() & ::@ & (~mine() | mutable())) | (mine() & ~::untracked_remote_bookmarks()) & mutable()| tracked_remote_bookmarks())",
     "--no-pager",
     "-T",
