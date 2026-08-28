@@ -21,7 +21,6 @@ Plug 'psliwka/vim-smoothie'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 " Plug 'ojroques/nvim-oscyank'
-Plug 'github/copilot.vim'
 
 " Dependency of telescope
 Plug 'nvim-lua/plenary.nvim'
