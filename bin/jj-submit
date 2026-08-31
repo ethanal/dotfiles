@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -euxo pipefail
 
 if [[ $(jj bookmark list --conflicted) ]]; then
   echo "Conflicted bookmarks detected. Resolve conflicts and try again."
@@ -11,44 +11,45 @@ COMMIT=$1;
 CHANGE_ID="$(jj log --template 'change_id.shortest(8)' --no-pager --no-graph --color=never -r $COMMIT)"
 BRANCH_NAME="$USER/$(jj log --template 'change_id.shortest(8)' --no-pager --no-graph --color=never -r $CHANGE_ID)"
 
-MQ_CHANGE_ID=$(jj log -T 'if(parents.len() == 1, parents.map(|p| p.change_id()))' -r $COMMIT --no-pager --no-graph --color=never)
-MQ_BRANCH_NAME="mq/$CHANGE_ID"
+DEFAULT_BRANCH=$(jj log -r "local_trunk()" -T "local_bookmarks.filter(|b| b.name() == 'master' || b.name() == 'main' || b.name() == 'trunk')" --no-pager --no-graph --color=never)
+
+BASE_BRANCH=$(jj log -r "latest(heads(::$CHANGE_ID- & bookmarks(glob:'$USER/*') & ~::trunk()))" --no-pager --no-graph --color=never -T "local_bookmarks.filter(|b| b.name().starts_with('$USER/')).map(|b| b.name()).join(\"\n\") ++ \"\n\"" | head -1)
+BASE_BRANCH=${BASE_BRANCH:-$DEFAULT_BRANCH}
 
 set -x
 jj bookmark set $BRANCH_NAME -r $CHANGE_ID
-jj bookmark set $MQ_BRANCH_NAME -r $MQ_CHANGE_ID --allow-backwards
 
-jj git push -b glob:"*/$CHANGE_ID" --allow-new
+jj git push -b $USER/$CHANGE_ID
 
 set +x
 if [[ "$(gh pr list --head $BRANCH_NAME --json number)" == "[]" ]]; then
   echo Creating PR...
-  gh pr create --head $BRANCH_NAME --base $MQ_BRANCH_NAME
+  gh pr create --head $BRANCH_NAME --base $BASE_BRANCH
 else
   # Reset the base. Seems to be necessary to get the PR to update.
   echo Updating PR...
-  gh pr edit $BRANCH_NAME --base $MQ_BRANCH_NAME
+  gh pr edit $BRANCH_NAME --base $BASE_BRANCH
 fi
 
 # Build PR comment.
-LOG=$(jj log -r "(fork_point(trunk()::$CHANGE_ID)::$CHANGE_ID | $CHANGE_ID::latest(heads($CHANGE_ID:: & bookmarks(glob:'$USER/*')))) & bookmarks(glob:'$USER/*')" --no-pager --color=never --no-graph -T "'- REPLACE_BRANCH_NAME:' ++ remote_bookmarks.filter(|b| b.name().starts_with('$USER/') && b.remote() == 'git').map(|b| b.name()) ++ \"\n\"")
-echo $LOG | grep -o 'REPLACE_BRANCH_NAME.\+' | while read -r PATTERN; do
-  STK_BRANCH_NAME=$(echo $PATTERN | sed -E 's/REPLACE_BRANCH_NAME:(.*)/\1/')
-  PR_NUMBER="$(gh pr view $STK_BRANCH_NAME --json number --template '{{ .number }}')"
-  PATTERN_ESCAPE=$(echo $PATTERN | sed -E 's/\//\\\//g')
+LOG=$(jj log -r "(fork_point(trunk()::$CHANGE_ID)::$CHANGE_ID | $CHANGE_ID::latest(heads($CHANGE_ID:: & bookmarks(glob:'$USER/*')))) & bookmarks(glob:'$USER/*')" --no-pager --color=never --no-graph -T "remote_bookmarks.filter(|b| b.name().starts_with('$USER/') && b.remote() == 'git').map(|b| '- REPLACE_BRANCH_NAME:' ++ b.name()).join(\"\n\") ++ \"\n\"")
+LOG=$(grep -v '^[[:space:]]*$' <<< "$LOG" || true)
+
+while read -r PATTERN; do
+  STK_BRANCH_NAME=${PATTERN#REPLACE_BRANCH_NAME:}
+  PR_NUMBER="$(gh pr view "$STK_BRANCH_NAME" --json number --template '{{ .number }}')"
+  PATTERN_ESCAPE=$(sed -E 's/\//\\\//g' <<< "$PATTERN")
 
   SUFFIX=""
   if [[ $STK_BRANCH_NAME == $BRANCH_NAME ]]; then
     SUFFIX=" 👈"
   fi
-  LOG=$(echo $LOG | sed -E "s/$PATTERN_ESCAPE/#$PR_NUMBER$SUFFIX/g")
-done
-
-DEFAULT_BRANCH=$(jj log -r "local_trunk()" -T "local_bookmarks.filter(|b| b.name() == 'master' || b.name() == 'main' || b.name() == 'trunk')" --no-pager --no-graph --color=never)
+  LOG=$(sed -E "s/$PATTERN_ESCAPE/#$PR_NUMBER$SUFFIX/g" <<< "$LOG")
+done < <(grep -o 'REPLACE_BRANCH_NAME:[^[:space:]]\+' <<< "$LOG")
 
 COMMENT_FILE=$(mktemp)
 echo "### 🥞 Pull Request Stack" >> $COMMENT_FILE
-echo $LOG >> $COMMENT_FILE
+echo "$LOG" >> $COMMENT_FILE
 echo "- \`$DEFAULT_BRANCH\`" >> $COMMENT_FILE
 echo "<!-- this_is_the_jj_pr_stack_comment -->" >> $COMMENT_FILE
 
