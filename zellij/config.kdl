@@ -39,6 +39,7 @@ keybinds {
 
     shared {
       unbind "Ctrl q" // Make it hard to quit
+      unbind "Ctrl t" // Tab mode
     }
 
     scroll {
