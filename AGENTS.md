@@ -15,7 +15,12 @@
 # Unit tests
 - When writing unit tests, favor table-based testing rather than many tests with similar structure.
 
+# Naming
+- If variables are used immediately or shortly after being defined, they don't need long names.
+
 # Rust code
 - Using `unwrap()` is fine in tests. We don't need an error message for everything.
 - Where convenient, use the test-case crate for table-based testing.
-- Never attempt to manually modify a `Cargo.lock` file. If your sandbox prohibits tools that update `Cargo.lock`, defer to the user to make the update outside the sandbox.
+- Never attempt to manually modify a `Cargo.lock` file. If your sandbox
+  prohibits tools that update `Cargo.lock`, defer to the user to make the
+  update outside the sandbox.
