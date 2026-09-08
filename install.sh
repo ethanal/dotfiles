@@ -11,7 +11,9 @@ mkdir -p $HOME/.config/jj
 ln -sf $PWD/jj-config.toml $HOME/.config/jj/config.toml
 
 mkdir -p $HOME/.claude
+mkdir -p $HOME/.codex
 ln -sf $PWD/AGENTS.md $HOME/.claude/CLAUDE.md
+ln -sf $PWD/AGENTS.md $HOME/.codex/AGENTS.md
 ln -sf $PWD/AGENTS.md $HOME/.config/AGENTS.md
 
 ln -sf $PWD/tmux.conf $HOME/.tmux.conf

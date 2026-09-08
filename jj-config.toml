@@ -22,7 +22,7 @@ diff-formatter = ":git"
 default-command = [
     "log",
     "-r",
-    "trunk() | (tracked_remote_bookmarks() & ~::trunk()) | (mutable() & mine_flexible())::",
+    "visible() & (trunk() | (tracked_remote_bookmarks() & ~::trunk()) | (mutable() & mine_flexible())::)",
     # "trunk() | (mine_flexible() & mutable() & ~(empty() & description(exact:'') & trunk()+ & ~@)) | (tracked_remote_bookmarks() & ~::trunk())::",
     # "(trunk() | (~::trunk() & ::@ & (~mine() | mutable())) | (mine() & ~::untracked_remote_bookmarks()) & mutable()| tracked_remote_bookmarks())",
     "--no-pager",
