@@ -3,6 +3,7 @@
 
 # Comments
 - Do not leave code comments unless I specifically ask for them.
+- If you're moving or refactoring code that already has comments, keep them and adapt them if needed.
 
 # Version Control
 - Use Jujutsu for all version control operations.

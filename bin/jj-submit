@@ -32,7 +32,7 @@ else
 fi
 
 # Build PR comment.
-LOG=$(jj log -r "(fork_point(trunk()::$CHANGE_ID)::$CHANGE_ID | $CHANGE_ID::latest(heads($CHANGE_ID:: & bookmarks(glob:'$USER/*')))) & bookmarks(glob:'$USER/*')" --no-pager --color=never --no-graph -T "remote_bookmarks.filter(|b| b.name().starts_with('$USER/') && b.remote() == 'git').map(|b| '- REPLACE_BRANCH_NAME:' ++ b.name()).join(\"\n\") ++ \"\n\"")
+LOG=$(jj log -r "(fork_point(trunk() | $CHANGE_ID)::$CHANGE_ID | $CHANGE_ID::latest(heads($CHANGE_ID:: & bookmarks(glob:'$USER/*')))) & bookmarks(glob:'$USER/*')" --no-pager --color=never --no-graph -T "remote_bookmarks.filter(|b| b.name().starts_with('$USER/') && b.remote() == 'git').map(|b| '- REPLACE_BRANCH_NAME:' ++ b.name()).join(\"\n\") ++ \"\n\"")
 LOG=$(grep -v '^[[:space:]]*$' <<< "$LOG" || true)
 
 while read -r PATTERN; do
