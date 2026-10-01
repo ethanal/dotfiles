@@ -2,7 +2,6 @@ set -U fish_greeting ""
 
 bind ctrl-w backward-kill-word
 
-set -gx EDITOR (which nvim)
 set -gx LANG en_US.UTF-8
 
 set -gx LESS "-R --mouse --wheel-lines=2 -i"
@@ -18,7 +17,7 @@ set -gx PATH $HOME/.local/bin $PATH
 
 # Homebrew setup (macOS)
 if test -f /opt/homebrew/bin/brew
-    eval (/opt/homebrew/bin/brew shellenv)
+    eval (/opt/homebrew/bin/brew shellenv fish)
 
     # Use GNU coreutils by default
     set -gx PATH (brew --prefix coreutils)/libexec/gnubin $PATH
@@ -41,8 +40,9 @@ if test -f /opt/homebrew/bin/brew
     set -gx PATH (brew --prefix libpq)/bin $PATH
 end
 
+set -gx EDITOR (which nvim)
 
-set -gx ITERM2_SQUELCH_MARK 1
+
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 set -gx CLASSPATH /usr/local/lib/tla2tools.jar
 set -gx GIT_COMPLETION_CHECKOUT_NO_GUESS 1
@@ -57,10 +57,10 @@ alias gt='go test ./...'
 if test (uname -s) = "Darwin"
   alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
-  # This makes open work in tmux
-  alias open="reattach-to-user-namespace open"
-
   alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
+  set -gx STARSHIP_CONFIG $HOME/.dotfiles/starship.toml
+  starship init fish | source
 end
 
 function notes

@@ -7,5 +7,5 @@ font-family = "MesloLGS Nerd Font Mono"
 # Need this for tmux
 keybind = ctrl+backspace=text:\x17
 keybind = ctrl+v=paste_from_clipboard
-command = fish
+command = /bin/sh -c 'if [ -x /opt/homebrew/bin/fish ]; then exec /opt/homebrew/bin/fish; else exec fish; fi'
 keybind = shift+enter=text:\x1b\r
