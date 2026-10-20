@@ -7,16 +7,23 @@
 
 # Version Control
 - Use Jujutsu for all version control operations.
-- ABSOLUTELY NEVER run any `jj` command except for the following (with appropriate arguments):
+- Unless I explicitly ask for `jj` actions, DO NOT run any `jj`
+  command except for the following read only actions (with appropriate
+  arguments):
     - `jj show`
     - `jj diff`
     - `jj log`
     - `jj status`
-- DO NOT run a `jj` command that modifies revisions other than the current one, `@`. For example:
-    - If I ask to fix conflicts, DO NOT run `jj new`, DO NOT run `jj squash`
-    - NEVER run `jj edit`
-    - NEVER run `jj rebase`
-- If you think a `jj` command that modifies commit other then `@`, recommend the command to me, but do not run it.
+    - `jj op log`
+- If I ask to fix conflicts, DO NOT run `jj new` and DO NOT run `jj squash`.
+  Resolve the conflicts by editing files in @.
+- If I specifically request splitting up a diff/commit, you may use the
+  `jj-hunk` skill if it is available. When doing this, you can `jj edit` a
+  commit in the split stack to fix the build or modify the stack so each commit
+  stands on its own. Before starting one of these refactors, take note of the
+  `jj op log` so you can back out mistakes.
+- If you think a `jj` command that does not comply with the above rules is
+  helpful, recommend the command to me, but do not run it.
 
 # Tests
 - Prefer property-based testing if it's a good fit.
