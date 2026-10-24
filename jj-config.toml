@@ -13,7 +13,7 @@ git_push_bookmark = '"ethan/" ++ change_id.short()'
 # git_push_bookmark = '"ethan/" ++ description.first_line().lower().replace(regex:"[^a-z0-9 ]", "").trim().replace(regex:" +", "-") ++ "-" ++ change_id.short()'
 
 [revsets]
-short-prefixes = "(mine_flexible() & (mutable() | bookmarks())) | tracked_remote_bookmarks()"
+short-prefixes = "(mutable() | bookmarks()) | tracked_remote_bookmarks()"
 
 [ui]
 revsets-use-glob-by-default = true
@@ -59,11 +59,15 @@ pager = [
 "prefix" = { fg = "bright magenta", bold = true }
 
 [aliases]
-up = ["edit", "-r", "@+"]
-down = ["edit", "-r", "@-"]
+# https://caiustheory.com/jj-jj-jj-jj-jj/
+jj = ["util", "exec", "--", "jj"]
+up = ["util", "exec", "--", "sh", "-c", 'jj edit -r "children(@, ${1:-1})"', "jj up"]
+down = ["util", "exec", "--", "sh", "-c", 'jj edit -r "parents(@, ${1:-1})"', "jj down"]
 sq = ["squash"]
 rb = ["rebase"]
 cp = ["duplicate"]
+w = ["workspace"]
+wu = ["workspace", "update-stale"]
 ll = ["log", "-r", "::@ | @::"]
 tug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & ~trunk()", "--to", "closest_pushable(@)"]
 mug = ["bookmark", "move", "--from", "heads(::@ & bookmarks()) & trunk()", "--to", "closest_pushable(@)"]
@@ -71,6 +75,16 @@ watch = ["util", "exec", "--", "sh", "-c", "viddy -t -n 1 jj --color=always --ig
 push = ["git", "push"]
 fetch = ["git", "fetch"]
 pr = ["util", "exec", "--", "bash", "-c", "GH_PAGER='' gh pr view --json title,url --template '{{ .title }}, {{ .url }}' $(jj log -T 'local_bookmarks' --no-graph -r 'heads(bookmarks() & ::@)'); echo"]
+pro = ["util", "exec", "--", "bash", "-eu", "-c", '''
+branch=$(gh pr view "$1" --json headRefName --jq '.headRefName | @json')
+tracked=$(jj log --no-graph -r "tracked_remote_bookmarks(exact:$branch, exact:origin)" -T 'commit_id')
+if [[ -n "$tracked" ]]; then
+    jj new "bookmarks(exact:$branch)"
+else
+    jj new "remote_bookmarks(exact:$branch, exact:origin)"
+fi
+''', "jj pro"]
+
 
 credit = ["file", "annotate"]
 
@@ -91,3 +105,10 @@ restack = ["util", "exec", "--", "jj-pancake", "restack"]
 command = ["rustfmt", "+nightly", "--emit", "stdout"]
 patterns = ["glob:'**/*.rs'"]
 
+[fileset-aliases]
+lock = '''
+  root-glob:"**/flake.lock"
+| root-glob:"**/Cargo.lock"
+| root-glob:"**/Cargo.nix"
+| root-glob:"**/go.sum"
+'''
