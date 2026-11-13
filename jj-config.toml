@@ -75,12 +75,12 @@ watch = ["util", "exec", "--", "sh", "-c", "viddy -t -n 1 jj --color=always --ig
 push = ["git", "push"]
 push-stash = [
     "git", "push", "-c", "heads(mutable() & mine() & ~@)",
-    "--config", "templates.git_push_bookmark='\"ethan-stash/\" ++ change_id.short()'",
+    "--config", "templates.git_push_bookmark='\"ethan/stash-\" ++ change_id.short()'",
 ]
-pull-stash = ["bookmark", "track", "glob:ethan-stash/*@*"]
+pull-stash = ["bookmark", "track", "ethan/stash-*"]
 cleanup-stash = ["util", "exec", "--", "sh", "-eu", "-c", '''
-jj bookmark delete 'glob:ethan-stash/*'
-jj git push --bookmark 'glob:ethan-stash/*'
+jj bookmark delete 'ethan/stash-*'
+jj git push --deleted
 ''']
 fetch = ["git", "fetch"]
 pr = ["util", "exec", "--", "bash", "-c", "GH_PAGER='' gh pr view --json title,url --template '{{ .title }}, {{ .url }}' $(jj log -T 'local_bookmarks' --no-graph -r 'heads(bookmarks() & ::@)'); echo"]
