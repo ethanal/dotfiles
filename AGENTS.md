@@ -18,6 +18,7 @@
     - `jj file show`
     - `jj file list`
     - `jj file search`
+- If I ask you to use a workspace or a worktree, use the `jj workspace` commands.
 - If I ask to fix conflicts, DO NOT run `jj new` and DO NOT run `jj squash`.
   Resolve the conflicts by editing files in @.
 - If I specifically request splitting up a diff/commit, you may use the

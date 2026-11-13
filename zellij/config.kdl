@@ -19,6 +19,12 @@ keybinds {
         bind "," { SwitchToMode "RenameTab"; }
         bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
         bind "n" { GoToNextTab; SwitchToMode "Normal"; }
+        bind "m" {
+          LaunchOrFocusPlugin "session-manager" {
+            floating true
+          }
+          SwitchToMode "Normal"
+        }
         bind "d" { Detach; }
         bind "Left" { Resize "Left"; }
         bind "Right" { Resize "Right"; }
