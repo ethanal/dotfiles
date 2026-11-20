@@ -42,6 +42,17 @@
   your own. Ask the user for help resolving the issue.
 
 # Rust code
+## Rust technique
+- When writing new Rust code, if you're not explicitly prompted to write code
+  without human interaction, spend some time conversing with the human about
+  type modeling. The goal is for the human to have approved the type modeling
+  approach before implementation runs off the rails with poor type modeling.
+- When describing Rust code or changes to Rust code, anchor the discussion
+  around high level changes to the type system modeling of the problem, and
+  include those type system changes as code snippets. Don't discuss files
+  marked as generated according to .gitattributes.
+
+## Specific Rust habits
 - Using `unwrap()` is fine in tests. We don't need an error message for everything.
 - For lock poisoning, you can just do `.unwrap()` instead of giving an `.expect("...")` message.
 - If you see something like `self.x.iter()` separated onto multiple lines by the formatter, put it in parens like `(self.x.iter())` so it stays on one line.
